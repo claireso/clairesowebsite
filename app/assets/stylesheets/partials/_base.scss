@@ -1,0 +1,66 @@
+@import "compass/reset/utilities", 
+        "compass/css3",
+        "compass/typography/vertical_rhythm",
+        "compass/layout/grid-background",
+        "compass/utilities/sprites/sprite-img";
+
+@import "partials/variable";
+
+@include global-reset();
+@include reset-html5();
+
+/*Mixins*/
+@import "mixins/bubble";
+
+/*Helpers*/
+@import "helpers/html5boilerplate", "helpers/transitions";
+
+
+/*------- GENERIC -------*/
+::-moz-selection { background: $darkgray; text-shadow: none; color:$white;}
+::selection { background: $darkgray; text-shadow: none; color:$white; }
+*, *:after, *:before {
+    @include box-sizing(border-box);
+}
+
+body {
+    //@include debug-vertical-alignment();
+    background:image-url("brillant.png") repeat 0 0;
+    font-family:"Lucida Grande", Helvetica, Arial, sans-serif;
+    color:$darkgray;
+}
+
+a {
+    @extend .linktransition; 
+    text-decoration:none; color:$blue;
+
+    &:active {
+        position:relative; top:1px;
+    }
+
+    &:visited {color:$blue;}
+
+    p &:hover, p &:focus {
+        color:adjust-lightness($blue,10);
+    }
+}
+
+ul { margin:0;}
+
+body > div {
+    max-width:660px; padding:0 20px;
+    margin: 0 auto;
+}
+section[role="main"] {
+  margin-left:160px;
+    p {
+      @include margin-trailer(.5);
+    }
+}
+
+/*Partials*/
+@import "partials/font", 
+        "partials/grid",
+        "partials/sprite";
+
+

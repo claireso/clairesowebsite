@@ -1,0 +1,9 @@
+@mixin bubble($size, $center:false){
+    width:$size; height:$size;
+    @include border-radius($size);
+
+    @if $center{
+        text-align:center;
+        line-height:$size;
+    }
+}

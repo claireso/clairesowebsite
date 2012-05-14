@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: font-url('fonts/league_gothic-webfont.eot');
+    src: font-url('fonts/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('fonts/league_gothic-webfont.woff') format('woff'),
+         font-url('fonts/league_gothic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*vertical rythm*/
+$base-font-size :18px;
+$base-line-height: 30px;
+$relative-font-sizing: true;
+@include establish-baseline;
+
+.LeagueGothicRegular { font-family:"LeagueGothicRegular", Helvetica, Arial, sans-serif;}
+
+h1 { @include adjust-font-size-to(60px, 1.75); @include margin-trailer(.35); @extend .LeagueGothicRegular;}
+#logo { @include adjust-font-size-to(60px); @extend .LeagueGothicRegular;}
+small { @include adjust-font-size-to(11px); font-style:italic;}

@@ -1,0 +1,28 @@
+header {
+    @include padding-leader(1.5);
+    @include padding-trailer(1.5);
+    margin-left:20px;
+    position:relative;
+}
+
+#logo {
+    display:block;
+    @include bubble(100px, true);
+    background:$darkgray;
+    color:$white;
+
+    &:hover, &:focus { background:$blue;}
+    &:visited { color:$white;}
+}
+
+.infos {
+    position:absolute;
+    top:4.3em; right:0;
+    li {
+        margin-left:.5em;
+        @include adjust-font-size-to(11px); @include adjust-leading-to(2); display:inline-block;
+    }
+    a {
+        display:inline-block;
+    }
+}

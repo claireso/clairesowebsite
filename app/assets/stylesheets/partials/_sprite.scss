@@ -1,0 +1,20 @@
+@import "icon/*.png";
+@include all-icon-sprites;
+
+.icon { text-indent:-9999em; font-size:10px; display:inline-block; }
+
+.icon-twitter { 
+  width:image-width("icon/twitter.png"); height:image-height("icon/twitter.png");
+  position:relative; top:1px;
+  a:hover &, a:focus & {
+    @include icon-sprite(twitter-blue);
+  }
+}
+
+/*.icon-linkedin { 
+  width:image-width("icon/linkedin.png"); height:image-height("icon/linkedin.png");
+  position:relative; top:-1px;
+  a:hover &, a:focus & {
+    @include icon-sprite(linkedin-blue);
+  }
+}*/

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Claire Sosset</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <meta name="keywords" content="Front-end developer, html5, css3, javascript" />
+    <meta name="description" content="Website of Claire Sosset, front-end developer based in Paris" />
+    <meta name="viewport" content="width=device-width">
+    <%= csrf_meta_tags %>
+</head>
+<body>
+    <div>
+        <header>
+            <a id="logo" href="/">CS</a>
+            <div class="infos">
+                <ul>
+                    <li>
+                        claire.sosset[at]gmail[dot]com
+                    </li><!--
+                    --><li>
+                        <a href="http://twitter.com/claire_so" rel="external">
+                            <i class="icon icon-twitter">Twitter</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section role="main">
+            <%= yield %>
+        </section>
+    </div>
+    <%= javascript_include_tag "application" %>
+</body>
+</html>
