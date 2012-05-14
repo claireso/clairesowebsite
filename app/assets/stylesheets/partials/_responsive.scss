@@ -5,6 +5,13 @@
     .infos {
         position:static; text-align:center;
         @include margin-leader(1.5);
+        li {
+            margin:0;
+            display:block;
+        }
+    }
+    header {
+        margin-left:0;
     }
     section[role="main"] {
         margin:0;
