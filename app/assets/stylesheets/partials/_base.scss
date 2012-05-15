@@ -52,7 +52,7 @@ body > div {
     margin: 0 auto;
 }
 section[role="main"] {
-  margin-left:160px;
+  margin:0 20px 20px 160px;
     p {
       @include margin-trailer(.5);
     }
