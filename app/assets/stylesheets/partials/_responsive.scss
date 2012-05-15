@@ -4,7 +4,7 @@
     }
     .infos {
         position:static; text-align:center;
-        @include margin-leader(1.5);
+        @include margin-leader(1);
         li {
             margin:0;
             display:block;
