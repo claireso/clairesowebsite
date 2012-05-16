@@ -1,8 +1,14 @@
 Claireso::Application.routes.draw do
+  get "admin/index"
+
   get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
+
+  #admin
+  match 'admin' => 'admin#index'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
