@@ -1,0 +1,10 @@
+section[role="main"] {
+  padding:50px 20px 20px;
+    p {
+      @include margin-trailer(.5);
+    }
+}
+
+/*Partials*/
+@import "partials/font", 
+        "partials/grid";

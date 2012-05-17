@@ -51,16 +51,6 @@ body > div {
     max-width:660px; padding:0 20px;
     margin: 0 auto;
 }
-section[role="main"] {
-  margin:0 20px 20px 160px;
-    p {
-      @include margin-trailer(.5);
-    }
-}
 
-/*Partials*/
-@import "partials/font", 
-        "partials/grid",
-        "partials/sprite";
 
 
