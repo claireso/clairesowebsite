@@ -1,4 +1,6 @@
 Claireso::Application.routes.draw do
+  resources :projects
+
   get "admin/index"
 
   get "home/index"
