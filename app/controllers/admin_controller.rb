@@ -6,4 +6,14 @@ class AdminController < ApplicationController
 
   def index
   end
+
+  def projects
+    @projects = Project.all
+
+    respond_to do |format|
+      format.html # projects.html.erb
+      format.json { render json: @projects }
+    end
+  end
+
 end
