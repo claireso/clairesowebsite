@@ -10,10 +10,9 @@
             display:block;
         }
     }
-    header {
+    header, section[role="main"]{
         margin:0;
     }
-    section[role="main"] {
-        margin:0;
-    }
+     
+    nav { text-align:center; padding-left:0;}
 }

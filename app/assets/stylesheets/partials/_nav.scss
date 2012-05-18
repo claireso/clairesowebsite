@@ -1,0 +1,9 @@
+nav {
+  /*float:left; width: getPercent(140,620)#{"%"}; margin:0 getPercent(20,620)#{"%"} 0 0;*/
+  padding:30px 0 30px 140px;
+  a { color:$darkgray;  @include adjust-font-size-to(18px);
+    &:hover, &:focus { color:$blue;}
+  }
+  li { display:inline-block; margin-right:10px;}
+  .active a { color:$blue;}
+}

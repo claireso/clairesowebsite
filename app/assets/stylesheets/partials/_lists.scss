@@ -1,0 +1,11 @@
+.list-projects {
+    li { 
+        padding:30px 30px 30px 0;background:rgba($white, .6); border-bottom:1px solid $border-color;
+        &:first-child { border-top:1px solid $border-color;}
+
+        &:hover {
+            h1 { color:$blue;}
+        }
+    }
+    h1 { @include margin-trailer(.1);}
+}

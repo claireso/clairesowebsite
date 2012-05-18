@@ -10,7 +10,7 @@
 @include reset-html5();
 
 /*Mixins*/
-@import "mixins/bubble";
+@import "mixins/bubble", "functions/percent";
 
 /*Helpers*/
 @import "helpers/html5boilerplate", "helpers/transitions";
@@ -38,7 +38,7 @@ a {
         position:relative; top:1px;
     }
 
-    &:visited {color:$blue;}
+    &:visited {color:$darkgray;}
 
     p &:hover, p &:focus {
         color:adjust-lightness($blue,10);
@@ -50,6 +50,7 @@ ul { margin:0; padding:0;}
 body > div {
     max-width:660px; padding:0 20px;
     margin: 0 auto;
+    @extend .cleafix;
 }
 
 

@@ -26,9 +26,9 @@
     </script>
 </head>
 <body>
-    <div>
+    <div class="clearfix">
         <header>
-            <a id="logo" href="/">CS</a>
+            <%= link_to 'CS', root_path, {:id => "logo"} %> 
             <div class="infos">
                 <ul>
                     <li>
@@ -41,6 +41,12 @@
                     </li>
                 </ul>
             </div>
+            <nav>
+                <ul>
+                    <li class="<%= yield :aboutactive %>"><%= link_to 'About', root_path %></li> 
+                    <li class="<%= yield :projectsactive %>"><%= link_to 'Projects', projects_path %></li>
+                </ul>
+            </nav>
         </header>
         <section role="main">
             <%= yield %>

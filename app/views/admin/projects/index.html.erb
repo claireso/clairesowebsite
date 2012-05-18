@@ -1,28 +1,17 @@
 <h1>Listing projects</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Url</th>
-    <th>Urlgithub</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul>
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.title %></td>
-    <td><%= project.description %></td>
-    <td><%= project.url %></td>
-    <td><%= project.urlgithub %></td>
-    <td><%= link_to 'Show', admin_project_path(project) %></td>
-    <td><%= link_to 'Edit', edit_admin_project_path(project) %></td>
-    <td><%= link_to 'Destroy', admin_project_path(project), confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <li>
+    <%= project.title %><br/>
+    <%= project.description %><br />    
+    <%= project.url %><br />
+    <%= project.urlgithub %><br />
+    <%= link_to 'Show', admin_project_path(project) %> 
+  <%= link_to 'Edit', edit_admin_project_path(project) %> 
+  <%= link_to 'Destroy', admin_project_path(project), confirm: 'Are you sure?', method: :delete %><% end %>
+  </li>
+</ul>
 
 <br />
 

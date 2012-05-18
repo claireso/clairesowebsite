@@ -1,0 +1,14 @@
+.btn {
+    display:inline-block;
+    @include adjust-font-size-to(13px, .5);
+    color:$white;
+    background:$darkgray;
+    border-radius:5px;
+    padding:6px 10px 8px;
+
+    &:hover, &:focus {
+        background:$blue;
+    }
+
+    &:visited { color:$white;}
+}
