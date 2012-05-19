@@ -1,8 +1,6 @@
 Claireso::Application.routes.draw do
-  resources :projects
-
-  #admin
   
+  #admin  
   get "admin/index"
 
   match 'admin' => 'admin#index'
@@ -11,6 +9,7 @@ Claireso::Application.routes.draw do
   #front
   get "home/index"
   match 'about' => 'home#index'
+  match 'projects' => 'projects#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
