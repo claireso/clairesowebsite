@@ -10,6 +10,7 @@ Claireso::Application.routes.draw do
 
   #front
   get "home/index"
+  match 'about' => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
