@@ -1,11 +1,12 @@
 <% content_for :projectsactive do %>
 active
 <% end %>
+
 <ul class="list list-projects">
 <% @projects.each do |project| %>
   <li>
     <h1><%= project.title %></h1>
-    <p><%= project.description %></p>
+    <p><%= raw project.description %></p>
     <small>
       <% project.tags.each do |tag| %>
         #<%= tag.name %>
