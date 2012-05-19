@@ -1,4 +1,5 @@
-<%= form_for([:admin, @project]) do |f| %>
+<% @project.tags.build %>
+<%= form_for([:admin, @project]) do |project_form| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -12,22 +13,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= project_form.label :title %><br />
+    <%= project_form.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= project_form.label :description %><br />
+    <%= project_form.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+    <%= project_form.label :url %><br />
+    <%= project_form.text_field :url %>
   </div>
   <div class="field">
-    <%= f.label :urlgithub %><br />
-    <%= f.text_field :urlgithub %>
+    <%= project_form.label :urlgithub %><br />
+    <%= project_form.text_field :urlgithub %>
   </div>
+  <h2>Tags</h2>
+  <%= render :partial => 'admin/tags/form',
+             :locals => {:form => project_form} %>
   <div class="actions">
-    <%= f.submit %>
+    <%= project_form.submit %>
   </div>
 <% end %>

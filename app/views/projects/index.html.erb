@@ -6,12 +6,21 @@ active
   <li>
     <h1><%= project.title %></h1>
     <p><%= project.description %></p>
-    <% if project.url.size > 1 %>
-    <%= link_to "See the project", "#{project.url}", {:class => "btn", :rel => "external"} %> 
-      
-    <% end %>
-    <% if project.urlgithub.size > 1 %>
-    <%= link_to "See sources on Github", "#{project.urlgithub}", {:class => "btn", :rel => "external"} %> 
+    <small>
+      <% project.tags.each do |tag| %>
+        #<%= tag.name %>
+      <% end %>
+    </small>
+
+    <% if project.url.size > 1 || project.urlgithub.size > 1 %>
+        <div class="actions">
+            <% if project.url.size > 1 %>
+            <%= link_to "See the project", "#{project.url}", {:class => "btn", :rel => "external"} %> 
+            <% end %>
+            <% if project.urlgithub.size > 1 %>
+            <%= link_to "See sources on Github", "#{project.urlgithub}", {:class => "btn", :rel => "external"} %> 
+            <% end %>
+        </div>
     <% end %>
   </li>
 <% end %>

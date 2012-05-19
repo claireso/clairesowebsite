@@ -19,6 +19,10 @@
   <b>Urlgithub:</b>
   <%= @project.urlgithub %>
 </p>
+<p>
+  <b>Tags:</b>
+  <%= @project.tags.map { |t| t.name }.join(", ") %>
+</p>
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

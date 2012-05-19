@@ -21,4 +21,5 @@ h1 { @include adjust-font-size-to(60px, 1.75); @include margin-trailer(.35); @ex
 h2 { @include adjust-font-size-to(40px, 1); @include margin-trailer(.2); @extend .LeagueGothicRegular;}
 #logo { @include adjust-font-size-to(60px); @extend .LeagueGothicRegular;}
 small { @include adjust-font-size-to(11px); font-style:italic;}
-li p { @include adjust-font-size-to(14px); @include margin-trailer(.8); color:adjust-lightness($darkgray,45);}
+li p { @include adjust-font-size-to(14px); margin:0; color:adjust-lightness($darkgray,45);}
+small { font-style:normal;}
