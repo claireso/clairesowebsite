@@ -9,5 +9,5 @@
     }
     h1 { @include margin-trailer(.1);}
     small { display:block; font-style:normal; color:$blue;}
-    .actions { @include margin-leader(.8);}
+    /*.actions { @include margin-leader(.3);}*/
 }
