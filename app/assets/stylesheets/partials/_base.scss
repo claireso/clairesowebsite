@@ -38,7 +38,7 @@ a {
         position:relative; top:1px;
     }
 
-    &:visited {color:$darkgray;}
+    /*&:visited {color:$darkgray;}*/
 
     p &:hover, p &:focus {
         color:adjust-lightness($blue,10);

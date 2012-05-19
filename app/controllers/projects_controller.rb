@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.find(:all, :order => "created_at DESC");
+    @projects = Project.find(:all, :conditions => ["publish = ?" ,true],  :order => "created_at DESC");
 
     respond_to do |format|
       format.html # index.html.erb

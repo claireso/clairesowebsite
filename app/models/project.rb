@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :description, :title, :url, :urlgithub, :tags_attributes
+  attr_accessible :description, :title, :url, :urlgithub, :tags_attributes, :publish
   validates :title,  :presence => true
   validates :description, :presence => true
   has_many :tags

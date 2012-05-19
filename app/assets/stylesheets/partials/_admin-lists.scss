@@ -1,0 +1,15 @@
+.admin-list-projects {
+    li { background:$white; border-bottom:1px solid $border-color;
+         padding:30px;
+        &:first-child {
+            border-top:1px solid $border-color;
+        }
+    }
+
+    .actions {
+        padding-top:5px;text-align:right; @include adjust-font-size-to(12px);
+    }
+
+    a:hover, a:focus { color:$darkgray;}
+
+}

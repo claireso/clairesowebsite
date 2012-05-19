@@ -23,6 +23,9 @@
   <b>Tags:</b>
   <%= @project.tags.map { |t| t.name }.join(", ") %>
 </p>
-
+<p>
+  <b>Publish:</b>
+  <%= @project.publish %>
+</p>
 <%= link_to 'Edit', edit_admin_project_path(@project) %> |
 <%= link_to 'Back', admin_projects_path %>

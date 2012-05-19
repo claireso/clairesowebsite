@@ -6,7 +6,7 @@ class Admin::ProjectsController < ApplicationController
 
   # GET admin/projects
   def index
-    @projects = Project.all
+    @projects = Project.find(:all, :order => "created_at DESC");
 
     respond_to do |format|
       format.html # index.html.erb
