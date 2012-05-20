@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
-
+<% if notice %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+<div class="toolbar toolbar-top">
+  <%= link_to 'Back', admin_projects_path, :class => "lnk-back" %> |
+  <%= link_to 'Edit', edit_admin_project_path(@project) %>
+  
+</div>
 <p>
   <b>Title:</b>
   <%= @project.title %>
@@ -27,5 +33,8 @@
   <b>Publish:</b>
   <%= @project.publish %>
 </p>
-<%= link_to 'Edit', edit_admin_project_path(@project) %> |
-<%= link_to 'Back', admin_projects_path %>
+<div class="toolbar toolbar-bottom">
+  <%= link_to 'Back', admin_projects_path, :class => "lnk-back" %> |
+  <%= link_to 'Edit', edit_admin_project_path(@project) %>
+</div>
+

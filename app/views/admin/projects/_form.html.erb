@@ -1,9 +1,8 @@
 <% @project.tags.build %>
-<%= form_for([:admin, @project]) do |project_form| %>
+<%= form_for([:admin, @project],:html => {:class => "form"}) do |project_form| %>
   <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
+    <div class="error">
+      <p><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</p>
       <ul>
       <% @project.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -13,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= project_form.label :title %><br />
+    <%= project_form.label :title %>
     <%= project_form.text_field :title %>
   </div>
   <div class="field">
-    <%= project_form.label :description %><br />
+    <%= project_form.label :description %>
     <%= project_form.text_area :description %>
   </div>
   <div class="field">
-    <%= project_form.label :url %><br />
+    <%= project_form.label :url %>
     <%= project_form.text_field :url %>
   </div>
   <div class="field">
-    <%= project_form.label :urlgithub %><br />
+    <%= project_form.label :urlgithub %>
     <%= project_form.text_field :urlgithub %>
   </div>
   <div>
@@ -34,10 +33,10 @@
                :locals => {:form => project_form} %>  
   </div>
   <div class="field">
-    <%= project_form.label :publish %><br />
+    <%= project_form.label :publish %>
     <%= project_form.check_box :publish %>
   </div>
   <div class="actions">
-    <%= project_form.submit %>
+    <%= project_form.submit "Submit", :class => "btn" %>
   </div>
 <% end %>

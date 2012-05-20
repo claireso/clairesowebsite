@@ -1,0 +1,20 @@
+.form {
+    label { display:inline-block; width:33%; float:left; clear:left;}
+    input[type="text"], textarea { 
+        padding:10px; width:389px; box-shadow:0 0 5px rgba($darkgray,.3);
+        border:none; border-radius:3px; outline:none;
+        &:focus { box-shadow:0 0 5px rgba($blue,.8);}
+    }
+    input[type="text"] { height:35px;}
+    .field { @include margin-trailer(1);}
+    input[type="submit"]{ border:none; cursor:pointer;}
+    .actions { text-align:right;}
+    h2 { @include adjust-font-size-to(30px); @include margin-trailer(.2);}
+}
+
+.error {
+    padding:5px 10px; border:2px solid red; background:adjust-lightness(red, 40);
+    @include margin-trailer(1.5); border-radius:3px;
+    p { font-weight:bold; @include margin-trailer(.1);}
+    li { @include adjust-font-size-to(14px, .8);}
+}
