@@ -17,7 +17,7 @@ section {
     @include margin-leader(.8);
     
     &:before {
-        content:"←"; margin:1px 5px 0 0;
+        content:"\2190"; margin:1px 5px 0 0;
     }
 }
 /*back*/
