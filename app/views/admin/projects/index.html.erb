@@ -1,25 +1,31 @@
 <h1>All projects</h1>
 
+<div class="toolbar toolbar-top">
+  <%= link_to 'Back', admin_path, {:class => "lnk-back"} %>
+  <%= link_to 'New Project', new_admin_project_path, {:class => "btn"} %>  
+</div>
+
 <ul class="admin-list-projects">
-<% @projects.each do |project| %>
-  <li>
-    <b>Title:</b> <%= project.title %><br/>
-    <b>Description:</b> <%= project.description %><br />    
-    <b>Url:</b> <%= project.url %><br />
-    <b>Url Github: </b><%= project.urlgithub %><br />
-    <b>Created at: </b><%= project.created_at %><br />
-    <b>Updated at: </b><%= project.updated_at %><br />
-    <b>Publish:</b> <%= project.publish %>
-    <div class="actions">
-      <%= link_to 'Show', admin_project_path(project) %> 
-      <%= link_to 'Edit', edit_admin_project_path(project) %> 
-      <%= link_to 'Destroy', admin_project_path(project), confirm: 'Are you sure?', method: :delete %><% end %>  
-    </div>
-    
-  </li>
+  <% @projects.each do |project| %>
+    <li>
+      <b>Title:</b> <%= project.title %><br/>
+      <b>Description:</b> <%= project.description %><br />    
+      <b>Url:</b> <%= project.url %><br />
+      <b>Url Github: </b><%= project.urlgithub %><br />
+      <b>Created at: </b><%= project.created_at %><br />
+      <b>Updated at: </b><%= project.updated_at %><br />
+      <b>Publish:</b> <%= project.publish %>
+      <div class="actions">
+        <%= link_to 'Show', admin_project_path(project) %> 
+        <%= link_to 'Edit', edit_admin_project_path(project) %> 
+        <%= link_to 'Destroy', admin_project_path(project), confirm: 'Are you sure?', method: :delete %>
+      </div>
+    </li>
+  <% end %>
 </ul>
 
-<br />
+<div class="toolbar toolbar-bottom">
+  <%= link_to 'Back', admin_path, {:class => "lnk-back"} %>
+  <%= link_to 'New Project', new_admin_project_path, {:class => "btn"} %>  
+</div>
 
-<%= link_to 'New Project', new_admin_project_path %>
-<%= link_to 'Back', admin_path %>

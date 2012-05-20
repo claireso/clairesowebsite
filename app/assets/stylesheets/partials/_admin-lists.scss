@@ -8,6 +8,7 @@
 
     .actions {
         padding-top:5px;text-align:right; @include adjust-font-size-to(12px);
+        a { margin-left:3px;}
     }
 
     a:hover, a:focus { color:$darkgray;}
