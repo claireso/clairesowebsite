@@ -7,8 +7,7 @@
     padding:6px 10px 8px;
 
     &:hover, &:focus {
-        background:$blue;
+        background:$blue; color:$white;
     }
 
-    &:visited { color:$white;}
 }

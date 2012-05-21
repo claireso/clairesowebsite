@@ -33,7 +33,7 @@ body {
 
 a {
     @extend .linktransition; 
-    text-decoration:none; color:$blue;
+    text-decoration:none; color:$darkgray;
 
     &:active {
         position:relative; top:1px;
@@ -41,8 +41,16 @@ a {
 
     /*&:visited {color:$darkgray;}*/
 
-    p &:hover, p &:focus {
-        color:adjust-lightness($blue,10);
+    &:hover, &:focus {
+        color:$blue;
+    }
+
+    section & {
+        color:$blue;
+
+        &:hover, &:focus {
+            color:adjust-lightness($blue,10);    
+        }
     }
 }
 
