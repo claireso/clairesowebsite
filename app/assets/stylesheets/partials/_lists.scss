@@ -7,7 +7,7 @@
             h1 { color:$blue;}
         }
     }
-    h1 { @include margin-trailer(.1);}
+    h1 { @include margin-trailer(.13);}
     small { display:block; color:$blue;}
     /*.actions { @include margin-leader(.3);}*/
 }
