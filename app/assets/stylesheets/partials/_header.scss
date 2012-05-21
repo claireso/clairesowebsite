@@ -18,7 +18,7 @@ header {
 
 .infos {
     position:absolute;
-    top:4.3em; right:0;
+    top:4.2em; right:0;
     li {
         margin-left:.5em;
         @include adjust-font-size-to(11px); @include adjust-leading-to(2); display:inline-block;
