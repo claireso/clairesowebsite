@@ -3,6 +3,13 @@ class Admin::ProjectsController < ApplicationController
   http_basic_authenticate_with :name => NAME, :password => PASSWORD
 
   layout "admin"
+  before_filter :update_projects_cache , :only => [:create, :update, :destroy]
+
+  #custom function
+  def update_projects_cache
+    expire_page :controller => "/projects", :action => "index"
+  end
+
 
   # GET admin/projects
   def index
@@ -66,7 +73,7 @@ class Admin::ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to admin_projects_url }
     end

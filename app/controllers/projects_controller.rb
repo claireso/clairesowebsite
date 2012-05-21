@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  caches_page :index
   # GET /projects
   # GET /projects.json
   def index
