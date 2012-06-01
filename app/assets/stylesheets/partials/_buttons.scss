@@ -9,5 +9,51 @@
     &:hover, &:focus {
         background:$blue; color:$white;
     }
+}
 
+button { border:none; cursor:pointer;}
+
+.btn-push {
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:20px 40px;
+    background:adjust-lightness($darkgray,80);
+    color:$darkgray;
+    position:relative;
+
+    &:hover span {
+        color:$darkgray;
+        display:block;
+    }
+    span {
+        $width:250; 
+        display:none; 
+        position:absolute; bottom:70px; left:50%;
+        width:$width#{'px'}; margin-left:- $width/2#{'px'};
+        padding:15px 20px;
+        text-align:left;
+        text-transform:none;
+        background:adjust-lightness($darkgray,85);
+        border:1px solid adjust-lightness($darkgray,80);
+        @include border-radius(5px);
+        @include box-shadow(0 0 8px rgba($darkgray, 0.1));
+
+        &:after, &:before {
+            width:0; height:0; content:''; display:block;
+            position:absolute;
+            top:100%;
+            border:solid transparent;
+        }
+
+        &:after {
+            border-top-color:adjust-lightness($darkgray,85);
+            border-width:10px;
+            left:50%; margin-left:-10px;
+        }
+        &:before {
+            border-top-color:adjust-lightness($darkgray,80);
+            border-width:11px;
+            left:50%; margin-left:-11px;
+        }
+    } 
 }

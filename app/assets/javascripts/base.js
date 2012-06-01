@@ -1,8 +1,16 @@
-(function(win,$){
+(function(win,doc,$){
   
     var cs = {
         init : function init(){
             $('a[rel="external"]').on('click', this.openNewWindow);
+
+            //notify
+            if(doc.getElementById('notify')){
+                console.log(notify)
+                notify.init();
+            }
+
+
         },
         openNewWindow : function openNewWindow(e){
             e.preventDefault();
@@ -14,4 +22,4 @@
         cs.init();
     });
 
-})(window,jQuery);
+})(window,document,jQuery);
