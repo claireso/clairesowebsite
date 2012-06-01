@@ -9,6 +9,8 @@
             if(this.supportNotification()){
                 if(!this.hasAlreadyAccepted()){
                     this.buildButton();
+                } else {
+                    //this.testNotification();
                 }
             }
         },
@@ -26,6 +28,11 @@
         },
         askPermission : function askPermission(){
             win.webkitNotifications.requestPermission();
+        },
+        testNotification : function testNotification(){
+
+            var not = win.webkitNotifications.createHTMLNotification("http://clairesosset.fr");
+            not.show();
         }
     };
 

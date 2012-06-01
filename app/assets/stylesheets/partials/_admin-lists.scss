@@ -14,3 +14,7 @@
     a:hover, a:focus { color:$darkgray;}
 
 }
+
+.admin-list-notifications {
+    @extend .admin-list-projects;
+}

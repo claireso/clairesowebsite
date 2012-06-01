@@ -1,0 +1,25 @@
+<%= form_for([:admin, @notification],:html => {:class => "form"}) do |f| %>
+  <% if @notification.errors.any? %>
+    <div class="error">
+      <p><%= pluralize(@notification.errors.count, "error") %> prohibited this notification from being saved:</p>
+
+      <ul>
+      <% @notification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", :class => "btn" %>
+  </div>
+<% end %>

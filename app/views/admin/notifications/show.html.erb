@@ -1,0 +1,23 @@
+<% if notice %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+
+<div class="toolbar toolbar-top">
+  <%= link_to 'Back', admin_notifications_path, :class => "lnk-back" %> |
+  <%= link_to 'Edit', edit_admin_notification_path(@notification) %>
+</div>
+
+<p>
+  <b>Title:</b>
+  <%= @notification.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @notification.content %>
+</p>
+
+<div class="toolbar toolbar-bottom">
+  <%= link_to 'Back', admin_notifications_path, :class => "lnk-back" %> |
+  <%= link_to 'Edit', edit_admin_notification_path(@notification) %>
+</div>
