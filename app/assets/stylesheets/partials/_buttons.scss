@@ -16,14 +16,19 @@ button { border:none; cursor:pointer;}
 .btn-push {
     font-weight:bold;
     text-transform:uppercase;
-    padding:20px 40px;
+    padding:15px 30px;
     background:adjust-lightness($darkgray,80);
     color:$darkgray;
     position:relative;
+    @include box-shadow(0 1px 0 darken($white, 15), inset 0 1px 0 $white);
+    text-shadow:0 1px 0 $white;
 
-    &:hover span {
-        color:$darkgray;
-        display:block;
+    &:hover {
+        text-shadow:none;
+        span {
+            color:$darkgray;
+            display:block;    
+        }
     }
     span {
         $width:250; 
