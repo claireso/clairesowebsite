@@ -5,8 +5,7 @@
             $('a[rel="external"]').on('click', this.openNewWindow);
 
             //notify
-            if(doc.getElementById('notify')){
-                console.log(notify)
+            if($("ul.list-projects").length){
                 notify.init();
             }
 
