@@ -1,6 +1,10 @@
 (function(win, doc){
     
     win.notify = {
+        conf: {
+            clsclosed: "closed"
+        },
+        btn : null,
         init: function init(){
             //check if notification are available
             //check if user are already accepted notification
@@ -20,10 +24,11 @@
             return (0 === win.webkitNotifications.checkPermission()) ? true : false;
         },
         buildButton : function buildButton(){
-            //var btn = doc.querySelector("#notify");
-            var btn = this.createButton();
-            doc.querySelector('ul.list-projects + footer').appendChild(btn);
-            btn.addEventListener('click', this.askPermission,false);
+            var that = this;
+            this.btn = this.createButton();
+            doc.querySelector('ul.list-projects + footer').appendChild(this.btn);
+            this.btn.addEventListener('click', this.askPermission,false);
+
         },
         createButton: function createButton(){
             var btn = doc.createElement('button'),

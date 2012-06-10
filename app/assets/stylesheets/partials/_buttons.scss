@@ -26,23 +26,32 @@ button { border:none; cursor:pointer;}
     &:hover {
         text-shadow:none;
         span {
-            color:$darkgray;
-            display:block;    
+            color:adjust-lightness($darkgray,25);
+            //display:block;  
+            @include translateY(0);
+            opacity:1;  
+            clip:inherit;
         }
     }
     span {
         $width:250; 
-        display:none; 
-        position:absolute; bottom:70px; left:50%;
+        position:absolute; bottom:60px; left:50%;
         width:$width#{'px'}; margin-left:- $width/2#{'px'};
         padding:15px 20px;
         text-align:left;
         text-transform:none;
-        background:adjust-lightness($darkgray,85);
         border:1px solid adjust-lightness($darkgray,80);
+        //@include background(adjust-lightness($darkgray,85) linear-gradient(rgba($white, 0.6), rgba($white, 0)));
+        
+        @include background(adjust-lightness($darkgray,87));
         @include border-radius(5px);
-        @include box-shadow(0 0 8px rgba($darkgray, 0.1));
+        @include box-shadow(0 0 5px rgba($darkgray, 0.1));
+        @include adjust-leading-to(.8);
+        @include translate(0,10px,0);opacity:0; clip:rect(0,0,0,0);
+        @include transition(all 80ms ease);
 
+
+        
         &:after, &:before {
             width:0; height:0; content:''; display:block;
             position:absolute;
@@ -51,7 +60,7 @@ button { border:none; cursor:pointer;}
         }
 
         &:after {
-            border-top-color:adjust-lightness($darkgray,85);
+            border-top-color:adjust-lightness($darkgray,87);
             border-width:10px;
             left:50%; margin-left:-10px;
         }
@@ -61,4 +70,6 @@ button { border:none; cursor:pointer;}
             left:50%; margin-left:-11px;
         }
     } 
+
+    
 }
