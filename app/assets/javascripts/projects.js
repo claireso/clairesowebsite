@@ -33,7 +33,7 @@
         createButton: function createButton(){
             var btn = doc.createElement('button'),
                 overlay = doc.createElement('span'),
-                txt = doc.createTextNode('If you want to be notified when I publish a project, you need to accept push notification.');
+                txt = doc.createTextNode('If you want to be notified when I publish a project, you need to accept push notifications.');
                 overlay.appendChild(txt);
                 btn.setAttribute('id','notify');
                 btn.setAttribute('class','btn btn-push');
