@@ -7,17 +7,17 @@
         addEvents: function addEvents(){
             var that = this;
             var clickH = function clickH(){
-                that.sendNotification(this.getAttribute("data-title"),this.getAttribute("data-content"));
+                that.sendNotification(this.getAttribute("data-title"),this.getAttribute("data-content"), this.getAttribute("data-url"));
             };
 
             $('a.btn-notification').on('click', clickH);
         },
-        sendNotification: function sendNotification(title,content){
-            var notification = this.createNotification(title,content);
+        sendNotification: function sendNotification(title,content, url){
+            var notification = this.createNotification(title,content, url);
             notification.show();
         },
-        createNotification: function createNotification(title,content){
-            return win.webkitNotifications.createNotification("/favicon.ico",title,content);
+        createNotification: function createNotification(title,content, url){
+            return win.webkitNotifications.createHTMLNotification(url);
         }
     };
 

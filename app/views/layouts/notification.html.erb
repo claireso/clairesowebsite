@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Claire Sosset - Notification</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width">
+    <%= csrf_meta_tags %>
+
+</head>
+<body id="tpl-notification">
+    <div>
+        <section role="main">
+            <%= yield %>
+        </section>
+    </div>
+    <script>
+        (function(win, doc){
+            var lnk = doc.querySelector('a');
+
+            lnk.addEventListener('click', function(e){
+                e.preventDefault();
+                win.open(this.href);
+            },false);
+        }(window,document));
+    </script>
+</body>
+</html>

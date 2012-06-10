@@ -12,7 +12,7 @@
       <b>Title:</b> <%= notification.title %><br />
       <b>Content:</b> <%= notification.content %><br /><br />
       <p>
-        <a href="#" class="btn btn-notification" data-title="<%= notification.title %>" data-content="<%= notification.content %>">Send notification</a>
+        <a href="#" class="btn btn-notification" data-url="<%= request.protocol %><%= request.host %>:<%= request.port %>/notifications/<%= notification.id%>" data-title="<%= notification.title %>" data-content="<%= notification.content %>">Send notification</a>
     </p>
       <div class="actions">
         <%= link_to 'Show', admin_notification_path(notification) %>
@@ -20,6 +20,7 @@
         <%= link_to 'Destroy', admin_notification_path(notification), confirm: 'Are you sure?', method: :delete %>  
       </div>
     </li>
+    
   <% end %>  
 </ul>
 

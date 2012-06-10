@@ -13,3 +13,7 @@ p {
         "partials/grid",
         "partials/sprite";
 
+#tpl-notification {
+    > div { max-width:100%; padding:20px;}
+    section[role="main"] {margin:0;}
+}
