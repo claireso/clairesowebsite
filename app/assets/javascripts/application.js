@@ -12,4 +12,6 @@
 //
 // require jquery
 // require jquery_ujs
+// require projects
 //= require_directory .
+// stub projects

@@ -5,9 +5,9 @@
             $('a[rel="external"]').on('click', this.openNewWindow);
 
             //notify
-            if($("ul.list-projects").length){
+            /*if($("ul.list-projects").length){
                 notify.init();
-            }
+            }*/
 
 
         },
