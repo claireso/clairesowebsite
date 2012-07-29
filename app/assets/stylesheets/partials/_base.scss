@@ -19,6 +19,7 @@
 /*------- GENERIC -------*/
 ::-moz-selection { background: $darkgray; text-shadow: none; color:$white;}
 ::selection { background: $darkgray; text-shadow: none; color:$white; }
+
 *, *:after, *:before {
     @include box-sizing(border-box);
 }
@@ -31,15 +32,21 @@ body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+.inner {
+    @extend .clearfix;
+    max-width:660px; 
+    padding:0 20px;
+    margin: 0 auto;
+}
+
 a {
     @extend .linktransition; 
-    text-decoration:none; color:$darkgray;
+    text-decoration:none; 
+    color:$darkgray;
 
     &:active {
         position:relative; top:1px;
     }
-
-    /*&:visited {color:$darkgray;}*/
 
     &:hover, &:focus {
         color:$blue;
@@ -54,13 +61,11 @@ a {
     }
 }
 
-ul { margin:0; padding:0;}
-
-body > div {
-    max-width:660px; padding:0 20px;
-    margin: 0 auto;
-    @extend .cleafix;
+ul { 
+    margin:0; 
+    padding:0;
 }
+
 
 
 

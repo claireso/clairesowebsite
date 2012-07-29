@@ -1,7 +1,10 @@
 section[role="main"] {
-  margin:0 20px 50px 160px;
-  
-  & > footer { text-align:right; @include margin-leader(1);}
+  @include padding-leader(3);
+  @include padding-trailer(1.5);
+  & > footer { 
+    @include margin-leader(1);
+    text-align:right; 
+    }
 
 }
 p {
@@ -14,6 +17,9 @@ p {
         "partials/sprite";
 
 #tpl-notification {
-    > div { max-width:100%; padding:20px;}
+    > div { 
+        max-width:100%; 
+        padding:20px;
+    }
     section[role="main"] {margin:0;}
 }

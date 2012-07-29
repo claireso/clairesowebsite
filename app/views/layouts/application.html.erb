@@ -3,11 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>Claire Sosset - Front-end developer</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <meta name="keywords" content="Front-end developer, html5, css3, javascript" />
     <meta name="description" content="Website of Claire Sosset, front-end developer based in Paris" />
     <meta name="viewport" content="width=device-width">
     <%= csrf_meta_tags %>
+
 
     <%= javascript_include_tag "modernizr" %>
     
@@ -26,37 +29,43 @@
     </script>
 </head>
 <body>
-    <div>
-        <header>
+    
+    <header>
+        <div class="inner">
             <%= link_to 'CS', root_path, {:id => "logo"} %> 
-            <div class="infos">
-                <ul>
-                    <li>
-                        <script type="text/javascript" language="javascript">
-<!--
-var i1="";for(var ml=0;ml<415;ml++)i1+=String.fromCharCode(("2|.;+OX==V\"+.C2|.;~(XKV~(WMTSV~(FFD+OFXn0.%*#I\".+)^$|.^+ !CC=K`&D-7p*+aFFD43p2p4:8*4;*7aF9-.p8R-7*+a!K2&.194^KR7*51&(*LSpS,PFlFR8:\'897LUMMOK(1&.7*!w=V*~8~4~~88*9~!:TTXT,2&.1KR7*51&(*LS~S,P FF\" T\"MOww97.3,R+742g-&7g4)*LXZMOK(45525KR7*51&(*LS5S,PFFMOK!KFD4324:8*4:9aF9-.8R-7*+a!K!KFb(1h&.7*JGw=TTTTV*_8488h*9JGZX_,2&.1JGw=TTTTV*_(42`S&bKR7*51&(*LShS,PFyFR8:\'897LUMM=I~$|.^+ !\\0C~(DHCTDFHNMFTPD@CLQRHRMDFK4MKDV!2|(C+OD".charCodeAt(ml)-(0x1b)+63)%(0*3+95)+24+8);document.write(eval(i1))
-//-->
-</script>
-
-                    </li><!--
-                    --><li>
-                        <a href="http://twitter.com/claire_so" rel="external">
-                            <i class="icon icon-twitter">Twitter</i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
             <nav>
                 <ul>
                     <li class="<%= yield :aboutactive %>"><%= link_to 'About', about_path %></li> 
                     <li class="<%= yield :projectsactive %>"><%= link_to 'Projects', projects_path %></li>
                 </ul>
             </nav>
-        </header>
-        <section role="main">
-            <%= yield %>
-        </section>
-    </div>
+        </div>
+    </header>
+    <section role="main">
+        <div class="inner">
+            <%= yield %>    
+        </div>
+    </section>
+    <footer>
+        <div class="inner">
+            <ul>
+                <li>
+                    <script type="text/javascript" language="javascript">
+<!--
+var i1="";for(var ml=0;ml<415;ml++)i1+=String.fromCharCode(("2|.;+OX==V\"+.C2|.;~(XKV~(WMTSV~(FFD+OFXn0.%*#I\".+)^$|.^+ !CC=K`&D-7p*+aFFD43p2p4:8*4;*7aF9-.p8R-7*+a!K2&.194^KR7*51&(*LSpS,PFlFR8:\'897LUMMOK(1&.7*!w=V*~8~4~~88*9~!:TTXT,2&.1KR7*51&(*LS~S,P FF\" T\"MOww97.3,R+742g-&7g4)*LXZMOK(45525KR7*51&(*LS5S,PFFMOK!KFD4324:8*4:9aF9-.8R-7*+a!K!KFb(1h&.7*JGw=TTTTV*_8488h*9JGZX_,2&.1JGw=TTTTV*_(42`S&bKR7*51&(*LShS,PFyFR8:\'897LUMM=I~$|.^+ !\\0C~(DHCTDFHNMFTPD@CLQRHRMDFK4MKDV!2|(C+OD".charCodeAt(ml)-(0x1b)+63)%(0*3+95)+24+8);document.write(eval(i1))
+//-->
+</script>
+
+                </li><!--
+                --><li>
+                    <a href="http://twitter.com/claire_so" rel="external">
+                        <i class="icon icon-twitter">Twitter</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/jquery.js"><\/script>')</script>
     <%= javascript_include_tag "application" %>

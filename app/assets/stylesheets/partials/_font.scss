@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
     font-family: 'LeagueGothicRegular';
     src: font-url('fonts/league_gothic-webfont.eot');
     src: font-url('fonts/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
@@ -7,19 +7,43 @@
     font-weight: normal;
     font-style: normal;
 
-}
+}*/
 
 /*vertical rythm*/
-$base-font-size :16px;
+$base-font-size :18px;
 $base-line-height: 30px;
 $relative-font-sizing: true;
 @include establish-baseline;
 
-.LeagueGothicRegular { font-family:"LeagueGothicRegular", Helvetica, Arial, sans-serif;}
+.opensans { 
+    font-family:'Open Sans Condensed', Helvetica, Arial, sans-serif;
+}
 
-h1 { @include adjust-font-size-to(60px, 1.75); @include margin-trailer(.3); @extend .LeagueGothicRegular;}
-h2 { @include adjust-font-size-to(40px, 1); @include margin-trailer(.2); @extend .LeagueGothicRegular;}
-#logo { @include adjust-font-size-to(60px); @extend .LeagueGothicRegular;}
-small { @include adjust-font-size-to(11px); font-style:italic;}
-li p { @include adjust-font-size-to(16px, .8); @include margin-trailer(.6); color:adjust-lightness($darkgray,45);}
-small { font-style:normal;}
+h1 { 
+    @include adjust-font-size-to(70px, 1.75); 
+    @include margin-trailer(.3); 
+    @extend .opensans; 
+    font-weight:700;
+}
+h2 { 
+    @include adjust-font-size-to(40px, 1); 
+    @include margin-trailer(.2); 
+    @extend .opensans; 
+    font-weight:700;}
+#logo { 
+    @include adjust-font-size-to(60px); 
+    @extend .opensans; 
+    font-weight:700;
+}
+small { 
+    @include adjust-font-size-to(11px); 
+    font-style:italic;
+}
+li p { 
+    @include adjust-font-size-to(16px, .8); 
+    @include margin-trailer(.6); 
+    color:adjust-lightness($darkgray,45);
+}
+small { 
+    font-style:normal;
+}

@@ -1,0 +1,14 @@
+footer {
+    .inner ul { 
+        @include padding-leader(.3);
+        border-top:1px solid #ddd;
+        text-align:right;
+    }
+    li {
+        margin-left:.5em;
+        @include adjust-font-size-to(11px); @include adjust-leading-to(2); display:inline-block;
+    }
+    a {
+        display:inline-block;
+    }
+}

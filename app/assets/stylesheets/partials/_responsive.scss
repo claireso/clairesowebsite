@@ -1,18 +1,23 @@
 @media screen and (max-width: 36em) {
+    
     #logo {
         margin:0 auto;
+        float:none;
     }
-    .infos {
-        position:static; text-align:center;
-        @include margin-leader(1);
+
+    nav {
+        li {
+            display:block;
+            margin:0 0 .8em;
+            text-align:center;
+        }
+    }
+
+    footer li {
+        
         li {
             margin:0;
             display:block;
         }
     }
-    header, section[role="main"]{
-        margin:0;
-    }
-     
-    nav { text-align:center; padding-left:0;}
 }

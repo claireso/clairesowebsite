@@ -1,17 +1,21 @@
 .btn {
-    display:inline-block;
     @include adjust-font-size-to(13px, .5);
+    padding:6px 10px 8px;
+    display:inline-block;
     color:$white;
     background:$darkgray;
     border-radius:5px;
-    padding:6px 10px 8px;
 
     &:hover, &:focus {
-        background:$blue; color:$white;
+        background:$blue; 
+        color:$white;
     }
 }
 
-button { border:none; cursor:pointer;}
+button { 
+    border:none; 
+    cursor:pointer;
+}
 
 .btn-push {
     font-weight:bold;
@@ -20,28 +24,29 @@ button { border:none; cursor:pointer;}
     background:adjust-lightness($darkgray,80);
     color:$darkgray;
     position:relative;
-    @include box-shadow(0 1px 0 darken($white, 15), inset 0 1px 0 $white);
+    box-shadow:0 1px 0 darken($white, 15), inset 0 1px 0 $white;
     text-shadow:0 1px 0 $white;
 
     &:hover {
         text-shadow:none;
         span {
-            color:adjust-lightness($darkgray,25);
-            //display:block;  
             @include translateY(0);
+            color:adjust-lightness($darkgray,25);
             opacity:1;  
             clip:inherit;
         }
     }
     span {
         $width:250; 
-        position:absolute; bottom:60px; left:50%;
-        width:$width#{'px'}; margin-left:- $width/2#{'px'};
+        position:absolute; 
+        bottom:60px; 
+        left:50%;
+        width:$width#{'px'}; 
+        margin-left:- $width/2#{'px'};
         padding:15px 20px;
         text-align:left;
         text-transform:none;
         border:1px solid adjust-lightness($darkgray,80);
-        //@include background(adjust-lightness($darkgray,85) linear-gradient(rgba($white, 0.6), rgba($white, 0)));
         
         @include background(adjust-lightness($darkgray,87));
         @include border-radius(5px);
@@ -50,10 +55,11 @@ button { border:none; cursor:pointer;}
         @include translate(0,10px,0);opacity:0; clip:rect(0,0,0,0);
         @include transition(all 80ms ease);
 
-
-        
         &:after, &:before {
-            width:0; height:0; content:''; display:block;
+            width:0; 
+            height:0; 
+            content:''; 
+            display:block;
             position:absolute;
             top:100%;
             border:solid transparent;
@@ -62,12 +68,14 @@ button { border:none; cursor:pointer;}
         &:after {
             border-top-color:adjust-lightness($darkgray,87);
             border-width:10px;
-            left:50%; margin-left:-10px;
+            left:50%; 
+            margin-left:-10px;
         }
         &:before {
             border-top-color:adjust-lightness($darkgray,80);
             border-width:11px;
-            left:50%; margin-left:-11px;
+            left:50%; 
+            margin-left:-11px;
         }
     } 
 
