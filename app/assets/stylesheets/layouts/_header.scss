@@ -1,6 +1,6 @@
 header {
     @include padding-leader(1.5);
-    @include padding-trailer(1.5);
+    @include padding-trailer(2.5);
     position:relative;
     background:rgba($blue,.15);
     border-bottom:1px solid #cfcfcf;
