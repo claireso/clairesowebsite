@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Claire Sosset - Admin</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "admin", :media => "all" %>
     <meta name="robots" content="noindex" />
     <meta name="viewport" content="width=device-width">
@@ -12,11 +13,13 @@
     
 </head>
 <body>
-    <div>
-        <section role="main">
-            <%= yield %>
-        </section>
-    </div>
+    
+    <section role="main">
+        <div class="inner">
+            <%= yield %>    
+        </div>
+    </section>
+
     <%= javascript_include_tag "admin/admin" %>
     
 </body>
