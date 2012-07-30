@@ -1,0 +1,28 @@
+<% content_for :demosactive do %>
+active
+<% end %>
+
+<ul class="list list-projects">
+<% @demos.each do |demo| %>
+  <li>
+    <h1><%= demo.title %></h1>
+    <p><%= raw demo.description %></p>
+    <small>
+      <% demo.tags.each do |tag| %>
+        #<%= tag.name %>
+      <% end %>
+    </small>
+
+    <% if demo.url.size > 1 || demo.urlgithub.size > 1 %>
+        <div class="actions">
+            <% if demo.url.size > 1 %>
+            <%= link_to "See the demo", "#{demo.url}", {:class => "btn", :rel => "external"} %> 
+            <% end %>
+            <% if demo.urlgithub.size > 1 %>
+            <%= link_to "See sources on Github", "#{demo.urlgithub}", {:class => "btn", :rel => "external"} %> 
+            <% end %>
+        </div>
+    <% end %>
+  </li>
+<% end %>
+</ul>

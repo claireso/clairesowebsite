@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.find(:all, :conditions => ["publish = ?" ,true],  :order => "created_at DESC");
+    @projects = Project.find(:all, :conditions => ["publish = ? AND demo = ?" ,true, false],  :order => "created_at DESC");
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,6 +11,14 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def demos
+    @demos = Project.find(:all, :conditions => ["publish = ? AND demo = ?" ,true, true],  :order => "created_at DESC");
+
+    respond_to do |format|
+      format.html # demos.html.erb
+      format.json { render json: @demos }
+    end
+  end
   # GET /projects/1
   # GET /projects/1.json
   #def show

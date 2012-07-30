@@ -10,6 +10,7 @@ Claireso::Application.routes.draw do
   get "home/index"
   match 'about' => 'home#index'
   match 'projects' => 'projects#index'
+  match 'demos' => 'projects#demos'
   #match 'notifications/:id' => 'notifications#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
