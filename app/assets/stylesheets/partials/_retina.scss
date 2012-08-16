@@ -1,0 +1,21 @@
+$icons: sprite-map("icon-retina/*.png");
+
+@media 
+only screen and (-webkit-min-device-pixel-ratio : 1.5), 
+only screen and (min-resolution: 144dpi),
+only screen and (min-resolution: 1.5dppx) {
+    body {
+        background-image:image-url("brillant_@2X.png");
+        @include background-size(image-width("brillant_@2X.png")/2 auto);
+    }
+
+    .icon-twitter { 
+      background-image: $icons;
+      background-position:nth(sprite-position($icons, twitter),1)/2 nth(sprite-position($icons, twitter),2)/2;
+      @include background-size(100% auto);
+      
+      a:hover &, a:focus & {
+        background-position:nth(sprite-position($icons, twitter-blue),1)/2 nth(sprite-position($icons, twitter-blue),2)/2;
+      }
+    }
+}
