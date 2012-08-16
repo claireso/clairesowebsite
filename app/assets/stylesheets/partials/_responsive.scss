@@ -6,10 +6,13 @@
     }
 
     nav {
+        text-align:center;
+        padding-top:50px;
         li {
-            display:block;
-            margin:0 0 .8em;
-            text-align:center;
+            &:first-child {
+                margin-left:0;
+            }
+            
         }
     }
 
