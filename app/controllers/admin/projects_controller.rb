@@ -8,6 +8,7 @@ class Admin::ProjectsController < ApplicationController
   #custom function
   def update_projects_cache
     expire_page :controller => "/projects", :action => "index"
+    expire_page :controller => "/projects", :action => "demos"
   end
 
 
