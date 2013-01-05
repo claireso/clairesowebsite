@@ -5,6 +5,10 @@ header {
     background:rgba($blue,.15);
     border-bottom:1px solid #cfcfcf;
     box-shadow:inset 0 -1px 5px rgba($gray,.5);
+
+    .inner {
+        position:relative;
+    }
 }
 
 #logo {
@@ -22,3 +26,23 @@ header {
         color:$white;
     }
 }
+
+.social{
+    position:absolute;
+    bottom:-4em;
+    right:20px;
+
+    li{
+        padding:3px 5px 0;
+        display:inline-block;
+        background:rgba($blue,.2);
+        border-radius:3px 3px 0 0;
+    }
+
+    a {
+        color:$white;
+        &:hover,&:focus {
+            color:$blue;
+        }
+    }    
+} 

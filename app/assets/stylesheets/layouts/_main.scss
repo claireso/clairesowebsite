@@ -1,6 +1,7 @@
 section[role="main"] {
   @include padding-leader(3);
   @include padding-trailer(1.5);
+  
   & > footer { 
     @include margin-leader(1);
     text-align:right; 
