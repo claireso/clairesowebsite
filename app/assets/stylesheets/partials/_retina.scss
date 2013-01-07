@@ -8,14 +8,4 @@ only screen and (min-resolution: 1.5dppx) {
         background-image:image-url("brillant_@2X.png");
         @include background-size(image-width("brillant_@2X.png")/2 auto);
     }
-
-    .icon-twitter { 
-      background-image: $icons;
-      background-position:nth(sprite-position($icons, twitter),1)/2 nth(sprite-position($icons, twitter),2)/2;
-      @include background-size(100% auto);
-      
-      a:hover &, a:focus & {
-        background-position:nth(sprite-position($icons, twitter-blue),1)/2 nth(sprite-position($icons, twitter-blue),2)/2;
-      }
-    }
 }
