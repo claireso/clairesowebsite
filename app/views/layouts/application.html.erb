@@ -7,6 +7,7 @@
   <meta name="description" content="Website of Claire Sosset, front-end developer based in Paris" />
   <meta name="viewport" content="width=device-width">
   <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="favicon.png" />
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -51,5 +52,17 @@
         </div>
     </footer>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29509485-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
 </body>
 </html>
