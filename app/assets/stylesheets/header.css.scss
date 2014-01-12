@@ -1,0 +1,26 @@
+@import 'variables';
+
+#header {
+    text-align: center;
+
+    > .row {
+        padding-top:40px;
+        padding-bottom:40px;
+    }
+}
+
+.header__logo {
+    background: $color-primary;
+    color:$color-white;
+    display: inline-block;
+    text-decoration: none;
+
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+
+    font-size: 50px;
+    font-size: 5.0rem;
+    font-weight: bold;
+    line-height: 100px;
+}

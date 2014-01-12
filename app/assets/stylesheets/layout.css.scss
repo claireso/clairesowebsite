@@ -1,0 +1,153 @@
+@import 'variables';
+
+/* ==========================================================================
+   Helper classes // HTML5 Boilerplate
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.alt-text {
+    display: none;
+}
+
+/* ==========================================================================
+   GRID/ROW
+   ========================================================================== */
+.row {
+    padding-left:20px;
+    padding-right: 20px;
+    max-width:600px;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+/* ==========================================================================
+   BUTTON
+   ========================================================================== */
+.btn {
+    background: $color-primary;
+    color: $color-white;
+    padding: 5px 10px;
+    border-radius:2px;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.8;
+
+    &.fa {
+        padding: 7px;
+        font-size: 24px;
+        font-size: 2.4rem;
+    }
+}
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+html {
+    background: $color-bg;
+    font-size: 62.5%;
+    line-height: 1.6;
+    color:$color-font;
+}
+
+body {
+    font-size: 18px;
+    font-size:1.8rem;
+    font-family: 'Roboto Slab', serif;
+}
+
+section {
+    padding: 0 0 40px;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+.heading-1 {
+    margin:0;
+    font-size: 35px;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.heading-2 {
+    margin:1.7em 0 0;
+    font-size: 22px;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+a {
+    color:$color-primary;
+    text-decoration: none;
+
+    section & {
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid $color-primary;
+        }    
+    }   
+}
+
+p {
+    margin:.5em 0;    
+}
+
+/* ==========================================================================
+   LIST
+   ========================================================================== */
+.list {
+    list-style-type:none;
+    margin:0;
+    padding: 0;
+
+    li {
+        padding:1em 0;
+
+        > a {
+            display: inline-block;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+    }
+
+    li + li {
+        border-top:1px solid $color-border;
+    }
+
+    a:hover,
+    a:focus {
+        border:none;
+        color:lighten($color-primary, 10);
+    }
+
+    small {
+        font-size: 12px;
+        font-size: 1.2rem;
+        display: block;  
+
+        a {
+            color: inherit;
+        }
+    }
+}
+
+    .list__tags {
+        display: block;
+        font-size: 12px;
+        font-size: 1.2rem;
+        line-height: 2;
+        color:#bdc3c7;
+    }
