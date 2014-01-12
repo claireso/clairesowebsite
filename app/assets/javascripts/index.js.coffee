@@ -17,7 +17,7 @@
                 win.open(e.target.href);
 
         mail: () ->
-            mail = ['claire', 'sosset', '@', 'gmail', '.', 'com']
+            mail = ['claire', '.', 'sosset', '@', 'gmail', '.', 'com']
             doc.querySelector('#js-mail').setAttribute('href', 'mailto:' + mail.join(''));
 
 
