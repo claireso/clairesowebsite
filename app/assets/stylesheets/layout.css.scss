@@ -61,6 +61,12 @@
         font-size: 20px;
         font-size: 2rem;
     }
+
+    &:hover,
+    &:focus {
+        //color:$color-border;
+        background: lighten($color-primary, 3);
+    }
 }
 /* ==========================================================================
    LAYOUT
@@ -161,3 +167,31 @@ p {
         line-height: 2;
         color:#bdc3c7;
     }
+
+.list--social {
+    margin: 40px 0 0;
+    padding: 0;
+    text-align: center;
+
+    li,
+    a {
+        display: inline-block;
+    }
+
+    li {
+        vertical-align: middle;
+    }
+
+    li + li {
+        margin:0 0 0 8px;
+    }
+}
+
+@media (min-width: 1200px) { 
+    .list--social {
+        position: fixed;
+        top:20px;
+        right: 20px;
+        margin:0;
+    }
+}

@@ -17,15 +17,6 @@
             <a class="header__logo" href="/">
                 CS
             </a>
-        </div>
-    </header>
-
-    <section role="main">
-        <%= yield %>    
-    </section>
-
-    <footer>
-        <div class="row">
             <ul class="list--social">
                 <li>
                     <a rel="external" class="btn fa fa-twitter" href="https://twitter.com/claire_so">
@@ -44,12 +35,17 @@
                 </li><!--
                 --><li>
                     <a id="js-mail" rel="external" class="btn" href="#">
-                        Hire me
+                        Get in touch
                     </a>
                 </li>
             </ul>
         </div>
-    </footer>
+    </header>
+
+    <section role="main">
+        <%= yield %>    
+    </section>
+
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <script type="text/javascript">
       var _gaq = _gaq || [];
