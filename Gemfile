@@ -34,6 +34,9 @@ end
 
 gem 'font-awesome-sass'
 
+gem 'actionpack-action_caching'
+gem 'actionpack-page_caching'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
