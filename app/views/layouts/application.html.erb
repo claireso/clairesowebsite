@@ -49,7 +49,7 @@
 
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-    <% if Rails.env.prodution? %>
+    <% if Rails.env.eql?("production") %>
 
       <script type="text/javascript">
         var _gaq = _gaq || [];
