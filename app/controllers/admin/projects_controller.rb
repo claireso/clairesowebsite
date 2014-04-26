@@ -4,7 +4,7 @@ class Admin::ProjectsController < ApplicationController
 
     layout 'admin'
 
-    before_filter :update_projects_cache , :only => [:create, :update, :destroy]
+    after_action :update_projects_cache , :only => [:create, :update, :destroy]
 
       #custom function
     def update_projects_cache
@@ -12,7 +12,7 @@ class Admin::ProjectsController < ApplicationController
     end
 
     def index
-        @projects = Project.all(:order => "created_at DESC")
+        @projects = Project.order('created_at DESC')
     end
 
     def new
