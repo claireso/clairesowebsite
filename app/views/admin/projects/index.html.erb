@@ -10,7 +10,7 @@
                 </div>
                 <div class="list__txt">
                     <%= link_to project.title, project.url %>
-                    <small><%= project.infos %></small>
+                    <small><%= raw project.infos %></small>
                     <span class="list__tags"><%= project.tags %></span>
                     <div class="list__actions">
                         <%= link_to "Edit", edit_admin_project_path(project) %>
