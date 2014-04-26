@@ -84,6 +84,13 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
+::selection {
+    background: rgba($color-gray,.3);
+    }
+::-moz-selection {
+    background: rgba($color-gray,.3);
+}
+
 section {
     padding: 0 0 40px;
 }
@@ -135,9 +142,6 @@ p {
 }
 
     .list__item {
-        display: table;
-        table-layout: fixed;
-        width: 100%;
         padding:1em 0;
 
         > a {
@@ -152,23 +156,32 @@ p {
     }
 
         .list__picture {
-            padding:0 20px 0 0;
             width: 20rem;
+            background: $color-primary;
 
             .picture {
+                transform:translateZ(0);
                 width: 100%;
                 max-width: 100%;
+                margin:0 0 1rem;
+                transition: opacity 120ms ease;
+            }
+            
+            a {
+                display: block;
+            }
+
+            a:hover,
+            a:focus {
+                border:none;
+
+                .picture {
+                    opacity: .4;
+                }
             }
         }
 
-        .list__txt,
-        .list__picture {
-            display: table-cell;
-            vertical-align: top;
-        }
-
         .list__txt {
-            
 
             a:hover,
             a:focus {
@@ -192,7 +205,7 @@ p {
                 font-size: 12px;
                 font-size: 1.2rem;
                 line-height: 2;
-                color:#bdc3c7;
+                color:$color-gray;
             }
 
 .list--social {
@@ -214,7 +227,36 @@ p {
     }
 }
 
-@media (min-width: 1200px) { 
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (min-width: 570px) { //570px
+    .list__item {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        min-height: 10rem;
+    }
+
+        .list__txt,
+        .list__picture {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .list__txt {
+            padding:0 0 0 20px;
+        }
+
+        .list__picture {
+            .picture {
+                margin:0;
+            }
+        }
+}
+
+
+@media (min-width: 75em) { //1200px
     .list--social {
         position: fixed;
         top:20px;
