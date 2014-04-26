@@ -160,11 +160,9 @@ p {
             background: $color-primary;
 
             .picture {
-                transform:translateZ(0);
                 width: 100%;
                 max-width: 100%;
                 margin:0 0 1rem;
-                transition: opacity 120ms ease;
             }
             
             a {
@@ -176,7 +174,7 @@ p {
                 border:none;
 
                 .picture {
-                    opacity: .4;
+                    opacity: 0;
                 }
             }
         }
