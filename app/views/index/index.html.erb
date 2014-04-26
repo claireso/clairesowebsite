@@ -13,21 +13,22 @@
         <% @projects.each do |project| %>
 
             <li class="list__item">
-                <% if project.cover.file? %>
-                    <div class="list__picture">
+                <div class="list__picture">
+                    <% if project.cover.file? %>
                         <%= link_to image_tag(project.cover.url(:medium), :alt => "", :class => "picture"), project.url, :rel => "external" %>
-                    </div>
-                <% end %>
+                    <% end %>
+                </div>
+                
                 <div class="list__txt">
                     <%= link_to project.title, project.url, :rel => "external" %>
-                    <small><%= project.infos %></small>
+                    <small><%= raw project.infos %></small>
                     <span class="list__tags"><%= project.tags %></span>    
                 </div>
             </li>
         <% end %>
 
 
-        <li class="list__item">
+        <!-- <li class="list__item">
             <div class="list__picture">
                 <img class="picture" src="http://placehold.it/140x90">    
             </div>
@@ -115,7 +116,7 @@
                 <small>Design by <a rel="external" href="https://twitter.com/cmjnrvb">@cmjnrvb</a> and <a rel="external" href="https://twitter.com/PertinentMarker">@mx</a></small>
                 <span class="list__tags">#backbone #require #compass #responsive</span>
             </div>
-        </li>
+        </li> -->
     </ul>
 </div>
 
