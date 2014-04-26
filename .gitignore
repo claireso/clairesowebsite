@@ -18,3 +18,5 @@
 config/protect.rb
 public/assets
 public/system/
+
+Gemfile.lock
