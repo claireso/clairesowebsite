@@ -16,3 +16,5 @@
 /tmp
 
 config/protect.rb
+public/assets
+public/system/
