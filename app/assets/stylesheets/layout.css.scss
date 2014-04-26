@@ -88,6 +88,10 @@ section {
     padding: 0 0 40px;
 }
 
+.picture {
+    display: block;
+}
+
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
@@ -128,8 +132,12 @@ p {
     list-style-type:none;
     margin:0;
     padding: 0;
+}
 
-    li {
+    .list__item {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
         padding:1em 0;
 
         > a {
@@ -137,36 +145,55 @@ p {
             line-height: 1.2;
             font-weight: bold;
         }
-    }
 
-    li + li {
-        border-top:1px solid $color-border;
-    }
-
-    a:hover,
-    a:focus {
-        border:none;
-        color:lighten($color-primary, 10);
-    }
-
-    small {
-        font-size: 12px;
-        font-size: 1.2rem;
-        display: block;  
-
-        a {
-            color: inherit;
+        + .list__item {
+            border-top:1px solid $color-border;
         }
     }
-}
 
-    .list__tags {
-        display: block;
-        font-size: 12px;
-        font-size: 1.2rem;
-        line-height: 2;
-        color:#bdc3c7;
-    }
+        .list__picture {
+            padding:0 20px 0 0;
+            width: 20rem;
+
+            .picture {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .list__txt,
+        .list__picture {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .list__txt {
+            
+
+            a:hover,
+            a:focus {
+                border:none;
+                color:lighten($color-primary, 10);
+            }
+
+            small {
+                font-size: 12px;
+                font-size: 1.2rem;
+                display: block;  
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+
+            .list__tags {
+                display: block;
+                font-size: 12px;
+                font-size: 1.2rem;
+                line-height: 2;
+                color:#bdc3c7;
+            }
 
 .list--social {
     margin: 40px 0 0;
