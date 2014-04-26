@@ -57,4 +57,6 @@ Clairesowebsite::Application.routes.draw do
       # (app/controllers/admin/products_controller.rb)
       resources :projects
     end
+
+  match '*path' => redirect('/'), via: :get
 end
