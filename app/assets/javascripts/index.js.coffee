@@ -7,14 +7,28 @@
     'use strict';
 
     site = 
+        
         externalLinks: () ->
             doc.addEventListener 'click', (e) ->
-                rel = e.target.getAttribute('rel');
-                
-                return false if !rel or 'external' isnt rel
+                params = {};
+                params.el = e.target;
+
+                checkDom = (params) ->
+                    params.el = params.el.parentNode;
+
+                    return params if params.el.nodeType is Node.DOCUMENT_NODE
+                    
+                    params.rel = params.el.getAttribute('rel');
+                    return params
+
+                params.rel = params.el.getAttribute('rel');
+
+                params = checkDom(params) while ((!params.rel or 'external' isnt params.rel) and params.el.nodeType isnt Node.DOCUMENT_NODE);
+
+                return false if !params.rel or 'external' isnt params.rel
 
                 e.preventDefault();
-                win.open(e.target.href);
+                win.open(params.el.href);
 
         mail: () ->
             mail = ['claire', '.', 'sosset', '@', 'gmail', '.', 'com']
