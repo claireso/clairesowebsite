@@ -29,20 +29,11 @@
 .row {
     padding-left:20px;
     padding-right: 20px;
-    max-width:600px;
+    max-width:640px;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
 }
 
-.fifty {
-    box-sizing:border-box;
-    width:50%;
-    float: left;
-
-    + .fifty {
-        padding: 0 0 0 30px;
-    }
-}
 
 /* ==========================================================================
    BUTTON
@@ -76,6 +67,11 @@ html {
     font-size: 62.5%;
     line-height: 1.6;
     color:$color-font;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -92,173 +88,78 @@ body {
 }
 
 section {
-    padding: 0 0 40px;
+    padding: 8rem 0 4rem;
+    text-align: center;
 }
 
 .picture {
     display: block;
 }
 
+.contact {
+    list-style: none;
+    margin: 2.4rem 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+
+        + li {
+            margin-left: .8rem;
+        }
+    }
+
+    a:hover,
+    a:focus {
+        border: none;
+        color:$color-white;
+    }
+}
+
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
 .heading-1 {
-    margin:0;
-    font-size: 35px;
-    font-size: 3.5rem;
+    margin:0 0 1.2rem;
+    font-size: 2.8rem;
     font-weight: bold;
 }
 
 .heading-2 {
-    margin:1.7em 0 0;
-    font-size: 22px;
+    margin:1.7rem 0 0;
     font-size: 2.2rem;
     font-weight: bold;
 }
 
 a {
-    color:$color-primary;
+    color:$color-secondary;
     text-decoration: none;
 
     section & {
         &:hover,
         &:focus {
-            border-bottom: 1px solid $color-primary;
-        }    
-    }   
+            // border-bottom: 1px solid $color-secondary;
+            color: darken($color-secondary, 10);
+        }
+    }
 }
 
 p {
-    margin:.5em 0;    
+    margin:.5rem 0;
 }
 
 /* ==========================================================================
    LIST
    ========================================================================== */
-.list {
-    list-style-type:none;
-    margin:0;
-    padding: 0;
-}
-
-    .list__item {
-        padding:1em 0;
-
-        > a {
-            display: inline-block;
-            line-height: 1.2;
-            font-weight: bold;
-        }
-
-        + .list__item {
-            border-top:1px solid $color-border;
-        }
-    }
-
-        .list__picture {
-            width: 20rem;
-            background: $color-primary;
-
-            .picture {
-                width: 100%;
-                max-width: 100%;
-                margin:0 0 1rem;
-            }
-            
-            a {
-                display: block;
-            }
-
-            a:hover,
-            a:focus {
-                border:none;
-
-                .picture {
-                    opacity: 0;
-                }
-            }
-        }
-
-        .list__txt {
-
-            a:hover,
-            a:focus {
-                border:none;
-                color:lighten($color-primary, 10);
-            }
-
-            small {
-                font-size: 12px;
-                font-size: 1.2rem;
-                display: block;  
-
-                a {
-                    color: inherit;
-                }
-            }
-        }
-
-            .list__tags {
-                display: block;
-                font-size: 12px;
-                font-size: 1.2rem;
-                line-height: 2;
-                color:$color-gray;
-            }
-
-.list--social {
-    margin: 40px 0 0;
-    padding: 0;
-    text-align: center;
-
-    li,
-    a {
-        display: inline-block;
-    }
-
-    li {
-        vertical-align: middle;
-    }
-
-    li + li {
-        margin:0 0 0 8px;
-    }
-}
 
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (min-width: 570px) { //570px
-    .list__item {
-        display: table;
-        table-layout: fixed;
-        width: 100%;
-        min-height: 10rem;
-    }
 
-        .list__txt,
-        .list__picture {
-            display: table-cell;
-            vertical-align: top;
-        }
-
-        .list__txt {
-            padding:0 0 0 20px;
-        }
-
-        .list__picture {
-            .picture {
-                margin:0;
-            }
-        }
 }
 
 
 @media (min-width: 75em) { //1200px
-    .list--social {
-        position: fixed;
-        top:20px;
-        right: 20px;
-        margin:0;
-    }
+
 }

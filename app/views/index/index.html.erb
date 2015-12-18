@@ -1,33 +1,31 @@
 <div class="row">
-    
-    <h1 class="heading-1">Hi!</h1>
-    <p>My name is Claire Sosset, I'm a front-end developer based in Paris.</p>
-    
-    <p>After studies in the field of new technologies, and a year of training in alternation within a communication agency, I am currently working at <a rel="external" href="http://octaveoctave.com">Octave &amp; Octave</a> as lead front-end developer.</p>
 
-    <p>I use mainly HTML5, CSS3 and JavaScript. Curious nature, I like trying new tools on my spare time as Backbone, Require, Ruby on Rails and Nodejs.</p>
-    
-    <h1 class="heading-2">Some works</h1>
-
-    <ul class="list">
-        <% @projects.each do |project| %>
-
-            <li class="list__item">
-                <div class="list__picture">
-                    <% if project.cover.file? %>
-                        <%= link_to image_tag(project.cover.url(:medium), :alt => "", :class => "picture"), project.url, :rel => "external" %>
-                    <% end %>
-                </div>
-                
-                <div class="list__txt">
-                    <%= link_to project.title, project.url, :rel => "external" %>
-                    <small><%= raw project.infos %></small>
-                    <span class="list__tags"><%= project.tags %></span>    
-                </div>
-            </li>
-            
-        <% end %>
+    <h1 class="heading-1">Claire Sosset</h1>
+    <p>Since july 2015, lead front-end developer <a href="http://ulule.com">@Ulule</a></p>
+    <p>Former, lead front-end developer <a href="http://www.octaveoctave.com">@Octaveoctave</a></p>
+    <ul class="contact">
+        <li>
+            <a rel="external" class="btn fa fa-twitter" href="https://twitter.com/claire_so">
+                <span class="alt-text">Twitter</span>
+            </a>
+        </li><!--
+        --><li>
+            <a rel="external" class="btn fa fa-github" href="https://github.com/claireso">
+                <span class="alt-text">Github</span>
+            </a>
+        </li><!--
+        --><li>
+            <a rel="external" class="btn fa fa-linkedin" href="http://www.linkedin.com/pub/claire-sosset/21/913/801">
+                <span class="alt-text">Linkedin</span>
+            </a>
+        </li><!--
+        --><li>
+            <a id="js-mail" rel="external" class="btn fa fa-envelope" href="#">
+                <span class="alt-text">Mail</span>
+            </a>
+        </li>
     </ul>
+
 </div>
 
 
