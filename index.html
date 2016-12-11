@@ -3,22 +3,34 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        
         <meta name="description" content="Website of Claire Sosset, front-end developer based in Paris">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Claire Sosset - Front-end developer</title>
 
         <link rel="icon" type="image/png" href="favicon.png">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
+        <script>
+          WebFontConfig = {
+            google: {
+              families: ['Roboto Slab:400,700']
+            }
+          };
+
+          (function(d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+            s.parentNode.insertBefore(wf, s);
+          })(document);
+        </script>
 
         <style>
             ::selection { background: rgba(189, 195, 199,.3); }
             ::-moz-selection { background: rgba(189, 195, 199,.3); }
             html, body { margin: 0; padding: 0; background: #fdfdfd; }
             *, *:before, *:after { box-sizing: inherit; }
-            html { background: #fff; font-size: 62.5%; line-height: 1.6; color: #333; box-sizing: border-box; }
-            body { font-family: 'Roboto Slab', sans-serif; font-size: 1.8rem; }
+            html { font-size: 62.5%; line-height: 1.6; color: #333; box-sizing: border-box; }
+            body { font-family: 'Roboto Slab', sans-serif; font-size: 1.8rem; opacity: 0;}
             main { display: block; padding: 12rem 2rem 4rem; max-width: 480px; margin: 0 auto; text-align: center; }
             h1 {font-size: 2.8rem; font-weight: bold; margin: 0 0 1.2rem; }
             p { margin: .5rem 0; }
@@ -30,6 +42,9 @@
             .contact svg { display: block; fill: #fff; }
             .btn { padding: .8rem; background: #e74c3c; color: #fff; border-radius: .2rem; display: block; }
             .btn:hover, .btn:focus { background: #e9594a; }
+
+            /* transition */
+            .wf-active body { opacity: 1; transition: opacity 300ms ease-out;  }
 
         </style>
 
