@@ -1,4 +1,4 @@
-const CURRENT_CACHE = 'static-v1';
+const CURRENT_CACHE = 'claireso-static-v1';
 
 const expectedCaches = [
   CURRENT_CACHE,
@@ -6,11 +6,13 @@ const expectedCaches = [
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CURRENT_CACHE).then(cache => cache.addAll([
-      '/',
-      '/index.html',
-      '/favicon.png',
-    ]))
+    caches.open(CURRENT_CACHE)
+      .then(cache => cache.addAll([
+        '/',
+        '/index.html',
+        '/favicon.png',
+      ]))
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -20,7 +22,7 @@ self.addEventListener('activate', event => {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
-          if (!/^static-/.test(cacheName)) {
+          if (!/^claireso-/.test(cacheName)) {
             return;
           }
           if (expectedCaches.indexOf(cacheName) == -1) {
