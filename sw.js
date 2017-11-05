@@ -1,4 +1,4 @@
-const CURRENT_CACHE = 'claireso-static-v2';
+const CURRENT_CACHE = 'claireso-static-v3';
 
 const expectedCaches = [
   CURRENT_CACHE,
