@@ -1,0 +1,21 @@
+{
+    "name": "Claire Sosset - Freelance front-end développeur",
+    "short_name": "Claire So",
+    "start_url": "/",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/static/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/static/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#f5f5f5",
+    "background_color": "#f5f5f5",
+    "display": "standalone"
+}
