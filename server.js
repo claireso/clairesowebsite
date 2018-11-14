@@ -20,6 +20,7 @@ app
   .prepare()
   .then(() => {
     const server = express()
+    server.disable('x-powered-by')
 
     server.use(favicon(path.join(__dirname, 'static', 'favicon.ico')))
 
