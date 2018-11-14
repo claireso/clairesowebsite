@@ -64,7 +64,7 @@ const ProjectLink = styled.a`
   font-size: 2rem;
   transition: border 150ms ease-out;
 
-  &:hover {
+  .no-touch &:hover {
     border-color: var(--primaryColor);
   }
 `
@@ -94,7 +94,7 @@ const GoToTop = styled.button.attrs({
     }
   }
 
-  &:hover svg {
+  .no-touch &:hover svg {
     fill: var(--primaryColor);
   }
 `

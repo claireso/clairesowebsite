@@ -52,7 +52,7 @@ const Styles = createGlobalStyle`
     text-decoration: none;
     transition: color 150ms ease-out;
 
-    &:hover {
+    .no-touch &:hover {
       color: var(--primaryColor);
     }
   }
@@ -74,7 +74,7 @@ const Styles = createGlobalStyle`
       width: 1.6rem;
     }
 
-    &:hover {
+    .no-touch &:hover {
       svg {
         opacity: 1;
       }
@@ -91,6 +91,14 @@ export default class MyApp extends App {
     }
 
     return { pageProps }
+  }
+
+  componentDidMount() {
+    const isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+    if (!isTouch) {
+      document.querySelector('body').classList.add('no-touch')
+    }
   }
 
   render() {
