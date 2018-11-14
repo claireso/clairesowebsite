@@ -74,8 +74,7 @@ const Styles = createGlobalStyle`
       width: 1.6rem;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       svg {
         opacity: 1;
       }

@@ -39,8 +39,7 @@ const ProjectTitle = styled.a`
     fill: var(--secondaryColor);
   }
 
-  &:hover svg,
-  &:focus svg {
+  &:hover svg {
     opacity: 1;
     transform: translate(0, -50%);
   }

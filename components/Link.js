@@ -14,8 +14,7 @@ const StyledExternalLink = styled.a`
     width: 1.6rem;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     svg {
       opacity: 1;
     }
@@ -51,7 +50,7 @@ export const BackLink = ({ children, ...props }) => (
 )
 
 const rot13 = value =>
-  value.replace(/[a-zA-Z]/g, function(c) {
+  value.replace(/[a-zA-Z]/g, function (c) {
     return String.fromCharCode(
       (c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26
     )
