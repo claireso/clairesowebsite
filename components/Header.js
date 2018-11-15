@@ -21,7 +21,7 @@ const Wrapper = styled(Container)`
     bottom: 0;
     content: '';
     display: block;
-    height: .1rem;
+    height: 0.1rem;
     left: 4rem;
     position: absolute;
     right: 4rem;

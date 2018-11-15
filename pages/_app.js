@@ -94,7 +94,8 @@ export default class MyApp extends App {
   }
 
   componentDidMount() {
-    const isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+    const isTouch =
+      !!('ontouchstart' in window) || window.navigator.msMaxTouchPoints > 0
 
     if (!isTouch) {
       document.querySelector('body').classList.add('no-touch')

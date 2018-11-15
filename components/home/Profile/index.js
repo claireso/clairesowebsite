@@ -15,9 +15,9 @@ const Profile = () => {
             startups (Octave & Octave, Ulule), ce qui m'a permis de prendre part
             à l'élaboration de sites corporate et d' applications javascript
             complexes. <br />
-            J'apprécie tout particulièrement de développer de belles interfaces en
-            collaboration avec des UI/UX designers et de les dynamiser à l'aide
-            d'API et d'outils modernes (React / Redux / Next / Webpack/
+            J'apprécie tout particulièrement de développer de belles interfaces
+            en collaboration avec des UI/UX designers et de les dynamiser à
+            l'aide d'API et d'outils modernes (React / Redux / Next / Webpack/
             StyledComponents ...).
           </Text>
         </Cell>
