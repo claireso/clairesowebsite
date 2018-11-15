@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Container from './Container'
 
 const HeaderWrapper = styled.header`
-  background: #fff;
-  box-shadow: 0 0 7px 0 #d0cece;
+  // background: #fff;
+  // box-shadow: 0 0 7px 0 #d0cece;
   //margin-bottom: calc(var(--baseline) * 18);
 `
 
@@ -14,6 +14,18 @@ const Wrapper = styled(Container)`
   align-items: center;
   display: flex;
   justify-content: space-between;
+  position: relative;
+
+  &:after {
+    background: var(--textColor);
+    bottom: 0;
+    content: '';
+    display: block;
+    height: .1rem;
+    left: 4rem;
+    position: absolute;
+    right: 4rem;
+  }
 `
 
 const StyledLink = styled.a`
