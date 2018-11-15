@@ -23,7 +23,7 @@ const StyledExternalLink = styled.a`
 
 const StyledBackLink = styled.a`
   display: inline-block;
-  color: var(--secondaryColor);
+  color: var(--textColor);
 
   svg {
     display: inline-block;
