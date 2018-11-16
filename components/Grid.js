@@ -10,13 +10,13 @@ export const Grid = styled.div`
 
 const start = css`
   @media only screen and (min-width: 860px) {
-    grid-column-start: ${props => props.start};
+    grid-column-start: ${props => props.startAt};
   }
 `
 
 const end = css`
   @media only screen and (min-width: 860px) {
-    grid-column-end: ${props => props.end};
+    grid-column-end: ${props => props.endAt};
   }
 `
 
@@ -27,7 +27,7 @@ const row = css`
 `
 
 export const Cell = styled.div`
-  ${props => (props.start ? start : '')}
-  ${props => (props.end ? end : '')}
+  ${props => (props.startAt ? start : '')}
+  ${props => (props.endAt ? end : '')}
   ${props => (props.row ? row : '')}
 `

@@ -66,7 +66,7 @@ const ProjectDate = styled(Cell)`
 const Project = ({ project }) => {
   return (
     <Item as="li">
-      <Cell start="3" end="13">
+      <Cell startAt="3" endAt="13">
         <Link
           as={`/p/${project.slug}`}
           href={`/project?slug=${project.slug}`}
@@ -80,7 +80,7 @@ const Project = ({ project }) => {
         </Link>
         <ProjectRole>{project.role}</ProjectRole>
       </Cell>
-      <ProjectDate as="span" start="1" end="3" row="1">
+      <ProjectDate as="span" startAt="1" endAt="3" row="1">
         {project.date}
       </ProjectDate>
     </Item>

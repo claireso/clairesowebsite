@@ -74,12 +74,12 @@ export default class Pager extends React.Component {
     return (
       <Grid>
         {prev && (
-          <PagerItem start="1" end="7">
+          <PagerItem startAt="1" endAt="7">
             <PagerLink align="left" item={prev} />
           </PagerItem>
         )}
         {next && (
-          <PagerItem start="7" end="13">
+          <PagerItem startAt="7" endAt="13">
             <PagerLink align="right" item={next} />
           </PagerItem>
         )}

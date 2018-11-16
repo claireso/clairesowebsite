@@ -7,6 +7,7 @@ module.exports = withOffline({
     globDirectory: '.',
     skipWaiting: true,
     clientsClaim: true,
+    offlineGoogleAnalytics: true,
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/fonts\.googleapis\.com/,

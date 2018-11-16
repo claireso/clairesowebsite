@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <Section name="contact" title="Contact">
       <Grid>
-        <Cell start="3" end="11">
+        <Cell startAt="3" endAt="11">
           <Text>
             N'hésitez pas à me contacter pour toute demande de collaboration
           </Text>

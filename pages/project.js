@@ -182,7 +182,7 @@ const Project = props => {
           </Spring>
 
           <Grid>
-            <Cell start="3" end="11">
+            <Cell startAt="3" endAt="11">
               <Spring
                 from={{ opacity: 0, transform: 'translate3d(0, 10px, 0)' }}
                 to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}

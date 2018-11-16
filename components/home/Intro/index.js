@@ -36,7 +36,7 @@ const Intro = () => {
   return (
     <Container>
       <Wrapper>
-        <Content start="3" end="12" as="p">
+        <Content startAt="3" endAt="12" as="p" coucou="ppppp">
           Développeuse front-end indépendante basée à Paris. <br />
           Découvrez quelques uns des projets auxquels j'ai eu le plaisir de
           participer.

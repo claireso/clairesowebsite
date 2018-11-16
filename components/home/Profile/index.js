@@ -7,7 +7,7 @@ const Profile = () => {
   return (
     <Section name="profile" title="Profil">
       <Grid>
-        <Cell start="3" end="11">
+        <Cell startAt="3" endAt="11">
           <Text>
             Je suis Claire Sosset, développeuse front-end depuis maintenant 9
             ans. <br />

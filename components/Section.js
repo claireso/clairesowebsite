@@ -23,7 +23,7 @@ const Section = ({ title, name, children, light, style = {} }) => {
       <Container>
         {title && (
           <Grid as="header">
-            <Title as="h2" start="3" end="13">
+            <Title as="h2" startAt="3" endAt="13">
               {title}
             </Title>
           </Grid>
