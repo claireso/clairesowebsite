@@ -3,6 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
 
+import Header from '@components/Header'
+
 const Styles = createGlobalStyle`
   :root {
     --backgroundColor: #f5f5f5;
@@ -154,6 +156,8 @@ export default class MyApp extends App {
             rel="stylesheet"
           />
         </Head>
+
+        <Header />
 
         <Component {...pageProps} />
       </Container>

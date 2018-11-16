@@ -20,6 +20,16 @@ const Content = styled(Cell)`
   @media only screen and (min-width: 860px) {
     font-size: 4.8rem;
   }
+
+  &:after {
+    background: var(--textColor);
+    content: '';
+    display: block;
+    height: 0.8rem;
+    margin: 5.2rem 0 0;
+    min-width: 6.4rem;
+    width: 14%;
+  }
 `
 
 const Intro = () => {
