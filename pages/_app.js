@@ -148,10 +148,6 @@ export default class MyApp extends App {
           <meta name="theme-color" content="#f5f5f5" />
 
           <link
-            href="https://fonts.googleapis.com/css?family=PT+Sans"
-            rel="stylesheet"
-          />
-          <link
             href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700"
             rel="stylesheet"
           />

@@ -16,7 +16,8 @@
         "alias": {
           "@components": "./components",
           "@hooks": "./hooks",
-          "@hoc": "./hoc"
+          "@hoc": "./hoc",
+          "@views": "./views"
         }
       }
     ]
