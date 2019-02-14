@@ -8,16 +8,20 @@ const DEFAULT_CONFIG = {
   threshold: 0
 }
 
+const loadIntersectionObserverPolyfill = async () => {
+  await import('intersection-observer')
+}
+
 const Observable = props => {
   const target = useRef(null)
 
   // @TODO: fix componentWillUnmount warning
-  useEffect(async () => {
+  useEffect(() => {
     const { onChange, config, onlyOnce } = props
     const IOconfig = config || DEFAULT_CONFIG
 
     if ('IntersectionObserver' in window === false) {
-      await import('intersection-observer')
+      loadIntersectionObserverPolyfill()
     }
 
     const targetDom = ReactDom.findDOMNode(target.current)
@@ -45,7 +49,7 @@ const Observable = props => {
 }
 
 Observable.defaultProps = {
-  onChange: () => {}
+  onChange: () => { }
 }
 
 export default Observable
