@@ -49,7 +49,7 @@ const Observable = props => {
 }
 
 Observable.defaultProps = {
-  onChange: () => { }
+  onChange: () => {}
 }
 
 export default Observable

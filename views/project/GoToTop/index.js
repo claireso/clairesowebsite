@@ -1,11 +1,11 @@
 /* eslint react/display-name: 0 */
 import PropTypes from 'prop-types'
-import { Transition } from 'react-spring'
+import { useTransition, animated } from 'react-spring'
 import styled from 'styled-components'
 
 import * as Icons from '@components/Icons'
 
-const StyledGoToTop = styled.button.attrs({
+const StyledGoToTop = animated(styled.button.attrs({
   children: <Icons.LongArrowUp />
 })`
   appearance: none;
@@ -33,24 +33,25 @@ const StyledGoToTop = styled.button.attrs({
   .no-touch &:hover svg {
     fill: var(--primaryColor);
   }
-`
+`)
 
 const GoToTop = ({ show }) => {
-  return (
-    <Transition
-      items={show}
-      from={{ opacity: 0 }}
-      enter={{ opacity: 1 }}
-      leave={{ opacity: 0 }}
-      config={{ tension: 250 }}
-    >
-      {show =>
-        show &&
-        (props => (
-          <StyledGoToTop style={props} onClick={() => window.scrollTo(0, 0)} />
-        ))
-      }
-    </Transition>
+  const transitions = useTransition(show, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    config: { tension: 250 }
+  })
+
+  return transitions.map(
+    ({ item, key, props }) =>
+      item && (
+        <StyledGoToTop
+          key={key}
+          style={props}
+          onClick={() => window.scrollTo(0, 0)}
+        />
+      )
   )
 }
 

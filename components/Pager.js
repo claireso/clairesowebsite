@@ -50,6 +50,17 @@ const PagerLink = ({ align, item }) => {
   )
 }
 
+PagerLink.propTypes = {
+  align: PropTypes.string,
+  item: PropTypes.shape({
+    subtitle: PropTypes.string.isRequired,
+    link: PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      as: PropTypes.string
+    })
+  })
+}
+
 export default class Pager extends React.Component {
   static propTypes = {
     prev: PropTypes.shape({

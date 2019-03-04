@@ -1,4 +1,4 @@
-import { Spring } from 'react-spring'
+import { Spring } from 'react-spring/renderprops.cjs'
 import PropTypes from 'prop-types'
 
 import usePrevious from '@hooks/usePrevious'

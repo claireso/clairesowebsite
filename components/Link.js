@@ -42,12 +42,20 @@ export const ExternalLink = ({ children, ...props }) => (
   </StyledExternalLink>
 )
 
+ExternalLink.propTypes = {
+  children: PropTypes.string.isRequired
+}
+
 export const BackLink = ({ children, ...props }) => (
   <StyledBackLink {...props}>
     <Icons.AngleLeft />
     {children}
   </StyledBackLink>
 )
+
+BackLink.propTypes = {
+  children: PropTypes.string.isRequired
+}
 
 const rot13 = value =>
   value.replace(/[a-zA-Z]/g, function(c) {
