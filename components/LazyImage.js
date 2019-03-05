@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react'
-import { Spring } from 'react-spring'
+import PropTypes from 'prop-types'
+import { useSpring, animated } from 'react-spring'
 
-export default props => {
+const LazyImage = props => {
   const [isLoaded, setLoaded] = useState(false)
+
+  const styles = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { tension: 80 }
+  })
 
   const handleLoad = () => {
     setLoaded(true)
@@ -19,10 +26,11 @@ export default props => {
 
   if (!isLoaded) return null
 
-  // config={{ tension: 140, friction: 70 }}
-  return (
-    <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={{ tension: 80 }}>
-      {styles => <img style={styles} {...props} />}
-    </Spring>
-  )
+  return <animated.img style={styles} {...props} />
 }
+
+LazyImage.propTypes = {
+  src: PropTypes.string.isRequired
+}
+
+export default LazyImage

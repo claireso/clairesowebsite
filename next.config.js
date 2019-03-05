@@ -35,19 +35,22 @@ module.exports = withOffline({
     ]
   },
   webpack(config, { dev, isServer }) {
-    if (isServer || dev) {
-      return config
-    }
+    const additionalConfig = {}
 
-    return {
-      ...config,
-      plugins: [
+    // add gzip for client production
+    if (!isServer && !dev) {
+      additionalConfig.plugins = [
         ...config.plugins,
         new CompressionPlugin({
           algorithm: 'gzip',
           test: /\.js(\?.*)?$/i
         })
       ]
+    }
+
+    return {
+      ...config,
+      ...additionalConfig
     }
   },
   serverRuntimeConfig: {}

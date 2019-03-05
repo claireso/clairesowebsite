@@ -12,33 +12,48 @@ const loadIntersectionObserverPolyfill = async () => {
   await import('intersection-observer')
 }
 
+const checkIntersectionObserver = () => {
+  return new Promise(resolve => {
+    if ('IntersectionObserver' in window === true) {
+      resolve()
+      return
+    }
+
+    loadIntersectionObserverPolyfill()
+      .then(resolve)
+      .catch(() => {
+        throw new Error('Can not load polyfill intersection observer')
+      })
+  })
+}
+
 const Observable = props => {
   const target = useRef(null)
 
-  // @TODO: fix componentWillUnmount warning
   useEffect(() => {
     const { onChange, config, onlyOnce } = props
     const IOconfig = config || DEFAULT_CONFIG
 
-    if ('IntersectionObserver' in window === false) {
-      loadIntersectionObserverPolyfill()
-    }
-
     const targetDom = ReactDom.findDOMNode(target.current)
+    let observer
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const { isIntersecting } = entry
+    checkIntersectionObserver()
+      .then(() => {
+        observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            const { isIntersecting } = entry
 
-        onChange(entry)
+            onChange(entry)
 
-        if (onlyOnce && isIntersecting) {
-          observer.unobserve(entry.target)
-        }
+            if (onlyOnce && isIntersecting) {
+              observer.unobserve(entry.target)
+            }
+          })
+        }, IOconfig)
+
+        observer.observe(targetDom)
       })
-    }, IOconfig)
-
-    observer.observe(targetDom)
+      .catch(() => {})
 
     return () => observer.unobserve(targetDom)
   }, [])
@@ -49,7 +64,7 @@ const Observable = props => {
 }
 
 Observable.defaultProps = {
-  onChange: () => { }
+  onChange: () => {}
 }
 
 export default Observable
