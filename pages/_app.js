@@ -4,6 +4,7 @@ import App, { Container } from 'next/app'
 import Head from 'next/head'
 
 import Header from '@components/Header'
+import PageTransition from '@components/PageTransition'
 
 const Styles = createGlobalStyle`
   :root {
@@ -155,7 +156,9 @@ export default class MyApp extends App {
 
         <Header />
 
-        <Component {...pageProps} />
+        <PageTransition>
+          <Component {...pageProps} />
+        </PageTransition>
       </Container>
     )
   }

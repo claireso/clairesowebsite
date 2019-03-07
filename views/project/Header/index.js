@@ -1,5 +1,4 @@
 import React from 'react'
-import { Spring } from 'react-spring/renderprops.cjs'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Link from 'next/link'
@@ -54,76 +53,38 @@ const ProjectLink = styled.a`
 
 class Header extends React.PureComponent {
   static propTypes = {
-    project: PropTypes.object.isRequired,
-    resetTransition: PropTypes.bool.isRequired
+    project: PropTypes.object.isRequired
   }
 
   render() {
-    const { project, resetTransition } = this.props
+    const { project } = this.props
 
     return (
       <StyledHeader>
         <Link href="/" passHref>
           <BackLink>Retour</BackLink>
         </Link>
-        <Spring
-          from={{ opacity: 0, transform: 'translate3d(0, 10px, 0)' }}
-          to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
-          delay={50}
-          reset={resetTransition}
-        >
-          {styles => (
-            <ProjectTitle style={styles}>{project.title}</ProjectTitle>
-          )}
-        </Spring>
 
-        <Spring
-          from={{ opacity: 0, transform: 'translate3d(0, 10px, 0)' }}
-          to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
-          delay={200}
-          reset={resetTransition}
-        >
-          {styles => (
-            <ProjectDetails style={styles}>
-              {project.date} - {project.role}
-            </ProjectDetails>
-          )}
-        </Spring>
+        <ProjectTitle>{project.title}</ProjectTitle>
+
+        <ProjectDetails>
+          {project.date} - {project.role}
+        </ProjectDetails>
 
         <Grid>
           <Cell startAt="3" endAt="11">
-            <Spring
-              from={{ opacity: 0, transform: 'translate3d(0, 10px, 0)' }}
-              to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
-              delay={330}
-              reset={resetTransition}
-            >
-              {styles => (
-                <ProjectDescription style={styles}>
-                  {project.description}
-                </ProjectDescription>
-              )}
-            </Spring>
+            <ProjectDescription>{project.description}</ProjectDescription>
 
             {project.website && (
-              <Spring
-                from={{ opacity: 0, transform: 'translate3d(0, 10px, 0)' }}
-                to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
-                delay={380}
-                reset={resetTransition}
-              >
-                {styles => (
-                  <ProjectDescription style={styles}>
-                    <ProjectLink
-                      href={project.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Voir le site
-                    </ProjectLink>
-                  </ProjectDescription>
-                )}
-              </Spring>
+              <ProjectDescription>
+                <ProjectLink
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Voir le site
+                </ProjectLink>
+              </ProjectDescription>
             )}
           </Cell>
         </Grid>

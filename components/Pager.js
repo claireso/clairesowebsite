@@ -41,7 +41,7 @@ const PagerItem = styled(Cell)`
 
 const PagerLink = ({ align, item }) => {
   return (
-    <Link {...item.link} passHref>
+    <Link {...item.link} scroll={false} passHref>
       <StyledLink align={align}>
         <PagerTitle>{item.title}</PagerTitle>
         <PagerSubTitle>{item.subtitle}</PagerSubTitle>
