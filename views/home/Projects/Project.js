@@ -70,6 +70,7 @@ const Project = ({ project }) => {
         <Link
           as={`/p/${project.slug}`}
           href={`/project?slug=${project.slug}`}
+          scroll={false}
           prefetch
           passHref
         >

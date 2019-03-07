@@ -41,12 +41,10 @@ const Project = props => {
       </Head>
 
       <Observable onChange={entry => setHeaderVisible(entry.isIntersecting)}>
-        <Header project={project} resetTransition={resetTransition} />
+        <Header project={project} />
       </Observable>
 
-      {project.full_description && (
-        <FullDescription project={project} resetTransition={resetTransition} />
-      )}
+      {project.full_description && <FullDescription project={project} />}
 
       {project.media && (
         <Media project={project} resetTransition={resetTransition} />
