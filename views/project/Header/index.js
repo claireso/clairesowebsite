@@ -61,7 +61,7 @@ class Header extends React.PureComponent {
 
     return (
       <StyledHeader>
-        <Link href="/" passHref>
+        <Link href="/" passHref scroll={false}>
           <BackLink>Retour</BackLink>
         </Link>
 

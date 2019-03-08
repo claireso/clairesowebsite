@@ -40,6 +40,20 @@ const reducer = (state, action) => {
   }
 }
 
+const scrollTo = (hash) => {
+  let target = 0
+
+  if (hash) {
+    const element = document.querySelector(hash)
+
+    if (element) {
+      target = element.offsetTop
+    }
+  }
+
+  window.scrollTo(0, target)
+}
+
 const PageTransition = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     visibleTransition: false,
@@ -65,11 +79,12 @@ const PageTransition = ({ children }) => {
 
           if (!state.visibleTransition || countStepsEnd < 2) return
 
-          window.scrollTo(0, 0)
           dispatch({
             type: 'updateContentAndHideTransition',
             content: children
           })
+
+          scrollTo(window.location.hash)
         })
     })
   )
