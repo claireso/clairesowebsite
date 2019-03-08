@@ -48,6 +48,17 @@ module.exports = withOffline({
       ]
     }
 
+    additionalConfig.entry = async () => {
+      const entries = await config.entry()
+
+      // client only
+      if (entries['main.js']) {
+        entries['static/runtime/polyfills.js'] = './client/polyfills.js'
+      }
+
+      return entries
+    }
+
     return {
       ...config,
       ...additionalConfig
