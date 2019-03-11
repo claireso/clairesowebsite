@@ -4,7 +4,6 @@ import Error from 'next/error'
 import Head from 'next/head'
 
 import projectsContext from '@context/projects'
-import usePrevious from '@hooks/usePrevious'
 
 import Observable from '@components/Observable'
 
@@ -27,9 +26,6 @@ const Project = props => {
 
   const showGoToTop = !isVisibleHeader && !isVisiblePager
 
-  const prevSlug = usePrevious(slug)
-  const resetTransition = prevSlug !== slug
-
   if (!project) return <Error statusCode={404} />
 
   return (
@@ -47,9 +43,7 @@ const Project = props => {
 
       {project.full_description && <FullDescription project={project} />}
 
-      {project.media && (
-        <Media project={project} resetTransition={resetTransition} />
-      )}
+      {project.media && <Media project={project} />}
 
       <Observable onChange={entry => setPagerVisible(entry.isIntersecting)}>
         <Pager next={nextProject} prev={previousProject} />
