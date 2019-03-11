@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Container from './Container'
-import { Grid, Cell } from './Grid'
+import Container from '../Container'
+import { Grid, Cell } from '../Grid'
 
 const SectionWrapper = styled.section`
   padding: 4rem 0;

@@ -2,13 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-import Container from './Container'
+import Container from '../Container'
 
-const HeaderWrapper = styled.header`
-  // background: #fff;
-  // box-shadow: 0 0 7px 0 #d0cece;
-  //margin-bottom: calc(var(--baseline) * 18);
-`
+const HeaderWrapper = styled.header``
 
 const Wrapper = styled(Container)`
   align-items: center;

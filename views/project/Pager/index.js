@@ -8,8 +8,7 @@ const formatPagerItem = project => ({
   subtitle: project.title,
   link: {
     as: `/p/${project.slug}`,
-    href: `/project?slug=${project.slug}`,
-    prefetch: true
+    href: `/project?slug=${project.slug}`
   }
 })
 

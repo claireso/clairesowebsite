@@ -1,9 +1,9 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import Error from 'next/error'
 import Head from 'next/head'
 
-import withProjects from '@hoc/withProjects'
+import projectsContext from '@context/projects'
 import usePrevious from '@hooks/usePrevious'
 
 import Observable from '@components/Observable'
@@ -15,10 +15,11 @@ import Pager from '@views/project/Pager'
 import GoToTop from '@views/project/GoToTop'
 
 const Project = props => {
-  const { projects, slug } = props
+  const { slug } = props
   const [isVisibleHeader, setHeaderVisible] = useState(true)
   const [isVisiblePager, setPagerVisible] = useState(false)
 
+  const projects = useContext(projectsContext)
   const projectIndex = projects.findIndex(project => project.slug === slug)
   const project = projects[projectIndex]
   const nextProject = projects[projectIndex + 1]
@@ -62,8 +63,7 @@ const Project = props => {
 Project.getInitialProps = async ({ query }) => ({ slug: query.slug })
 
 Project.propTypes = {
-  projects: PropTypes.arrayOf(Object).isRequired,
   slug: PropTypes.string.isRequired
 }
 
-export default withProjects(Project)
+export default Project

@@ -40,7 +40,7 @@ const reducer = (state, action) => {
   }
 }
 
-const scrollTo = (hash) => {
+const scrollTo = hash => {
   let target = 0
 
   if (hash) {

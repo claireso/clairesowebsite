@@ -1,12 +1,14 @@
-import PropTypes from 'prop-types'
+import { useContext } from 'react'
 
-import withProjects from '@hoc/withProjects'
+import projectsContext from '@context/projects'
 
 import Section from '@components/Section'
 
 import Project from './Project'
 
-const Projects = ({ projects }) => {
+const Projects = () => {
+  const projects = useContext(projectsContext)
+
   return (
     <Section name="projects" title="Projets">
       <ul>
@@ -18,8 +20,4 @@ const Projects = ({ projects }) => {
   )
 }
 
-Projects.propTypes = {
-  projects: PropTypes.arrayOf(Object).isRequired
-}
-
-export default withProjects(Projects)
+export default Projects
