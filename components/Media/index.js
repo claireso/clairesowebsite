@@ -2,9 +2,9 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Observable from './Observable'
-import LazyImage from './LazyImage'
-import LazyVideo from './LazyVideo'
+import Observable from '../Observable'
+import LazyImage from '../LazyImage'
+import LazyVideo from '../LazyVideo'
 
 const MediaWrapper = styled.div`
   border: solid 1.2rem #fff;

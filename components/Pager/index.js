@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-import { Grid, Cell } from './Grid'
+import { Grid, Cell } from '../Grid'
 
 const StyledLink = styled.a`
   display: block;
