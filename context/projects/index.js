@@ -2,4 +2,8 @@ import React from 'react'
 
 import projects from './data'
 
-export default React.createContext(projects)
+const projectsContext = React.createContext(projects)
+
+const useProjects = () => React.useContext(projectsContext)
+
+export { useProjects }

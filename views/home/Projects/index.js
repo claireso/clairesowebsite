@@ -1,13 +1,11 @@
-import { useContext } from 'react'
-
-import projectsContext from '@context/projects'
+import { useProjects } from '@context/projects'
 
 import Section from '@components/Section'
 
 import Project from './Project'
 
 const Projects = () => {
-  const projects = useContext(projectsContext)
+  const projects = useProjects()
 
   return (
     <Section name="projects" title="Projets">
