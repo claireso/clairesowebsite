@@ -1,9 +1,9 @@
-import { Fragment, useState, useContext } from 'react'
+import { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import Error from 'next/error'
 import Head from 'next/head'
 
-import projectsContext from '@context/projects'
+import { useProjects } from '@context/projects'
 
 import Observable from '@components/Observable'
 
@@ -18,7 +18,7 @@ const Project = props => {
   const [isVisibleHeader, setHeaderVisible] = useState(true)
   const [isVisiblePager, setPagerVisible] = useState(false)
 
-  const projects = useContext(projectsContext)
+  const projects = useProjects()
   const projectIndex = projects.findIndex(project => project.slug === slug)
   const project = projects[projectIndex]
   const nextProject = projects[projectIndex + 1]
