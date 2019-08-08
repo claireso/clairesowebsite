@@ -10,14 +10,14 @@ module.exports = withOffline({
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/fonts\.googleapis\.com/,
-        handler: 'staleWhileRevalidate',
+        handler: 'StaleWhileRevalidate',
         options: {
           cacheName: 'google-fonts-stylesheets'
         }
       },
       {
         urlPattern: /^https:\/\/fonts\.gstatic\.com/,
-        handler: 'cacheFirst',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'google-fonts-webfonts',
           cacheableResponse: {
@@ -30,7 +30,7 @@ module.exports = withOffline({
       },
       {
         urlPattern: /^https?:\/\/clairesosset\.fr\/.*/,
-        handler: 'networkFirst'
+        handler: 'NetworkFirst'
       }
     ]
   },
