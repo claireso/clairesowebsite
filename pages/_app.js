@@ -1,6 +1,6 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import Head from 'next/head'
 
 import Header from '@components/Header'
@@ -37,7 +37,6 @@ const Styles = createGlobalStyle`
   body {
     background: var(--backgroundColor);
     color: var(--textColor);
-    // font-family: 'PT Sans', sans-serif;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
     font-size: 1.8rem;
@@ -86,16 +85,6 @@ const Styles = createGlobalStyle`
 `
 
 export default class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {}
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    return { pageProps }
-  }
-
   componentDidMount() {
     const isTouch =
       !!('ontouchstart' in window) || window.navigator.msMaxTouchPoints > 0
@@ -109,7 +98,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
 
     return (
-      <Container>
+      <React.Fragment>
         <Styles />
         <Head>
           <title>
@@ -159,7 +148,7 @@ export default class MyApp extends App {
         <PageTransition>
           <Component {...pageProps} />
         </PageTransition>
-      </Container>
+      </React.Fragment>
     )
   }
 }
