@@ -7,24 +7,36 @@ const { serverRuntimeConfig } = getConfig()
 const GA_CODE = serverRuntimeConfig.ga_id
 
 export default class MyDocument extends Document {
-  static async getInitialProps({ renderPage }) {
+  static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet()
+    const originalRenderPage = ctx.renderPage
 
-    const page = renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />)
-    )
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+        })
 
-    const styleTags = sheet.getStyleElement()
+      const initialProps = await Document.getInitialProps(ctx)
 
-    return { ...page, styleTags }
+      return {
+        ...initialProps,
+        styles: (
+          <Fragment>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </Fragment>
+        )
+      }
+    } finally {
+      sheet.seal()
+    }
   }
 
   render() {
     return (
       <html lang="fr">
         <Head>
-          {this.props.styleTags}
-
           {GA_CODE && (
             <Fragment>
               <script
