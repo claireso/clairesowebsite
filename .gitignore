@@ -1,4 +1,4 @@
 node_modules
-static/img
+public/static/img
 .next
 context/projects/data.js

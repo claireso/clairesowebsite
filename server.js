@@ -12,7 +12,7 @@ const customRoutes = {
     filePath: path.join(__dirname, '.next', '/service-worker.js')
   },
   '/robots.txt': {
-    filePath: path.join(__dirname, 'static', 'robots.txt')
+    filePath: path.join(__dirname, 'public', 'static', 'robots.txt')
   }
 }
 
@@ -22,7 +22,7 @@ app
     const server = express()
     server.disable('x-powered-by')
 
-    server.use(favicon(path.join(__dirname, 'static', 'favicon.ico')))
+    server.use(favicon(path.join(__dirname, 'public', 'static', 'favicon.ico')))
 
     server.get('/p/:slug', (req, res) => {
       const actualPage = '/project'

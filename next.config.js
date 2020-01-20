@@ -3,8 +3,6 @@ const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = withOffline({
   workboxOpts: {
-    globPatterns: ['static/**/*'],
-    globDirectory: '.',
     skipWaiting: true,
     clientsClaim: true,
     runtimeCaching: [
