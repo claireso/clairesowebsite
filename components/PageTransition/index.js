@@ -5,7 +5,7 @@ import { useTransition, animated } from 'react-spring'
 
 import usePrevious from '@hooks/usePrevious'
 
-const Tile = styled(animated.div)`
+const Curtain = styled(animated.div)`
   position: fixed;
   left: 50%;
   right: 50%;
@@ -14,15 +14,17 @@ const Tile = styled(animated.div)`
   z-index: 1;
 `
 
-const TRANSITIONS_CONFIG = [
-  // tile top
+const CURTAINS = [
+  // curtain top
   {
+    id: 0,
     from: { right: '50%', left: '50%', top: '50%', height: '0.5%' },
     enter: [{ left: '0%', right: '0%' }, { height: '50%' }],
     leave: { top: '100%' }
   },
-  // tile bottom
+  // curtain bottom
   {
+    id: 1,
     from: { right: '50%', left: '50%', bottom: '50%', height: '0.5%' },
     enter: [{ left: '0%', right: '0%' }, { height: '50%' }],
     leave: { bottom: '100%' }
@@ -32,9 +34,9 @@ const TRANSITIONS_CONFIG = [
 const reducer = (state, action) => {
   switch (action.type) {
     case 'showTransition':
-      return { ...state, visibleTransition: true }
+      return { ...state, curtains: action.transitions }
     case 'updateContentAndHideTransition':
-      return { ...state, visibleTransition: false, content: action.content }
+      return { ...state, curtains: [], content: action.content }
     default:
       return { ...state }
   }
@@ -56,53 +58,45 @@ const scrollTo = hash => {
 
 const PageTransition = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
-    visibleTransition: false,
+    curtains: [],
     content: children
   })
+
   const previousContent = usePrevious(children)
 
-  let countStepsEnd = 0
+  const transitions = useTransition(state.curtains, t => t.id, {
+    native: true,
+    config: { mass: 1, tension: 280, friction: 30 },
+    from: t => t.from,
+    enter: t => t.enter,
+    leave: t => t.leave,
+    onRest: t => {
+      // Call onRest only for one curtain
+      if (t.id !== 1) return
 
-  const groupTransitions = TRANSITIONS_CONFIG.map((conf, index) =>
-    useTransition(state.visibleTransition, null, {
-      ...conf,
-      native: true,
-      config: { mass: 1, tension: 280, friction: 30 },
-      // /!\ hack
-      // react-spring has not a method to catch the end of the transition
-      // our transition has two steps and the function onRest is called at the end of each
-      // we attach onRest only once and we update content and hide tiles at the end of the step two
-      onRest:
-        index === 0 &&
-        (() => {
-          countStepsEnd++
+      // Update content when curtains are visible
+      if (!state.curtains.length) return
 
-          if (!state.visibleTransition || countStepsEnd < 2) return
+      dispatch({
+        type: 'updateContentAndHideTransition',
+        content: children
+      })
 
-          dispatch({
-            type: 'updateContentAndHideTransition',
-            content: children
-          })
-
-          scrollTo(window.location.hash)
-        })
-    })
-  )
+      scrollTo(window.location.hash)
+    }
+  })
 
   useEffect(() => {
-    // do not show transition in the first render
     if (!previousContent) return
-    // display transition
-    dispatch({ type: 'showTransition' })
+
+    dispatch({ type: 'showTransition', transitions: CURTAINS })
   }, [children])
 
   return (
     <Fragment>
-      {groupTransitions.map(transitions => {
-        return transitions.map(
-          ({ item, key, props }) => item && <Tile key={key} style={props} />
-        )
-      })}
+      {transitions.map(
+        ({ item, key, props }) => item && <Curtain key={key} style={props} />
+      )}
       {state.content}
     </Fragment>
   )

@@ -47,19 +47,20 @@ ExternalLink.propTypes = {
   children: PropTypes.string.isRequired
 }
 
-export const BackLink = ({ children, ...props }) => (
-  <StyledBackLink {...props}>
+export const BackLink = React.forwardRef(({ children, ...props }, ref) => (
+  <StyledBackLink {...props} ref={ref}>
     <Icons.AngleLeft />
     {children}
   </StyledBackLink>
-)
+))
 
+BackLink.displayName = BackLink
 BackLink.propTypes = {
   children: PropTypes.string.isRequired
 }
 
 const rot13 = value =>
-  value.replace(/[a-zA-Z]/g, function(c) {
+  value.replace(/[a-zA-Z]/g, function (c) {
     return String.fromCharCode(
       (c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26
     )

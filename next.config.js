@@ -1,3 +1,4 @@
+const path = require('path')
 const withOffline = require('next-offline')
 const CompressionPlugin = require('compression-webpack-plugin')
 
@@ -5,6 +6,7 @@ module.exports = withOffline({
   workboxOpts: {
     skipWaiting: true,
     clientsClaim: true,
+    swDest: path.resolve(__dirname, 'public', 'service-worker.js'),
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/fonts\.googleapis\.com/,
