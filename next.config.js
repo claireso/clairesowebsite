@@ -64,5 +64,6 @@ module.exports = withOffline({
       ...additionalConfig
     }
   },
+  poweredByHeader: false,
   serverRuntimeConfig: {}
 })
