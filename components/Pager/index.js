@@ -54,6 +54,7 @@ PagerLink.propTypes = {
   align: PropTypes.string,
   item: PropTypes.shape({
     subtitle: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     link: PropTypes.shape({
       href: PropTypes.string.isRequired,
       as: PropTypes.string

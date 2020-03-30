@@ -4,9 +4,9 @@
   "description": "",
   "main": "",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start",
     "eslint": "eslint .",
     "prettier": "prettier --write \"./**/*.js\""
   },
@@ -23,7 +23,7 @@
   "dependencies": {
     "express": "4.17.1",
     "intersection-observer": "0.7.0",
-    "next": "9.3.1",
+    "next": "9.3.3",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -40,8 +40,8 @@
     "eslint-config-prettier": "6.10.1",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.19.0",
-    "eslint-plugin-react-hooks": "2.5.1",
+    "eslint-plugin-react-hooks": "3.0.0",
     "next-offline": "5.0.0",
-    "prettier": "2.0.1"
+    "prettier": "2.0.2"
   }
 }
