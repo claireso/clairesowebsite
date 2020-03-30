@@ -53,23 +53,13 @@ const ProjectRole = styled.span`
   margin: 0.4rem 0 0;
 `
 
-const ProjectDate = styled(Cell)`
-  font-size: 2.8rem;
-  line-height: 4rem;
-  color: var(--secondaryColor);
-
-  @media only screen and (min-width: 860px) {
-    color: var(--textColor);
-  }
-`
-
 const Project = ({ project }) => {
   return (
     <Item as="li">
       <Cell startAt="3" endAt="13">
         <Link
           as={`/p/${project.slug}`}
-          href={`/project?slug=${project.slug}`}
+          href="/p/[slug]"
           scroll={false}
           passHref
         >
@@ -80,9 +70,6 @@ const Project = ({ project }) => {
         </Link>
         <ProjectRole>{project.role}</ProjectRole>
       </Cell>
-      <ProjectDate as="span" startAt="1" endAt="3" row="1">
-        {project.date}
-      </ProjectDate>
     </Item>
   )
 }

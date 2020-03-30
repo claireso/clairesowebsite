@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
-import PropTypes from 'prop-types'
 import Error from 'next/error'
 import Head from 'next/head'
+import PropTypes from 'prop-types'
 
 import { useProjects } from '@context/projects'
 
@@ -13,8 +13,7 @@ import Media from '@views/project/Media'
 import Pager from '@views/project/Pager'
 import GoToTop from '@views/project/GoToTop'
 
-const Project = props => {
-  const { slug } = props
+const Project = ({ slug }) => {
   const [isVisibleHeader, setHeaderVisible] = useState(true)
   const [isVisiblePager, setPagerVisible] = useState(false)
 
@@ -54,7 +53,9 @@ const Project = props => {
   )
 }
 
-Project.getInitialProps = async ({ query }) => ({ slug: query.slug })
+export const getServerSideProps = async context => ({
+  props: { slug: context.params.slug }
+})
 
 Project.propTypes = {
   slug: PropTypes.string.isRequired
