@@ -3,7 +3,7 @@ import Error from 'next/error'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
 
-import { useProjects } from '@context/projects'
+import projects from '@data/projects'
 
 import Observable from '@components/Observable'
 
@@ -13,15 +13,9 @@ import Media from '@views/project/Media'
 import Pager from '@views/project/Pager'
 import GoToTop from '@views/project/GoToTop'
 
-const Project = ({ slug }) => {
+const Project = ({ project, nextProject, previousProject }) => {
   const [isVisibleHeader, setHeaderVisible] = useState(true)
   const [isVisiblePager, setPagerVisible] = useState(false)
-
-  const projects = useProjects()
-  const projectIndex = projects.findIndex(project => project.slug === slug)
-  const project = projects[projectIndex]
-  const nextProject = projects[projectIndex + 1]
-  const previousProject = projects[projectIndex - 1]
 
   const showGoToTop = !isVisibleHeader && !isVisiblePager
 
@@ -53,12 +47,43 @@ const Project = ({ slug }) => {
   )
 }
 
-export const getServerSideProps = async context => ({
-  props: { slug: context.params.slug }
-})
+export const getStaticProps = async context => {
+  const { slug } = context.params
+
+  const projectIndex = projects.findIndex(project => project.slug === slug)
+  const project = projects[projectIndex]
+  const nextProject = projects[projectIndex + 1]
+  const previousProject = projects[projectIndex - 1]
+
+  return {
+    props: {
+      project: project || null,
+      nextProject: nextProject
+        ? { title: nextProject.title, slug: nextProject.slug }
+        : null,
+      previousProject: previousProject
+        ? {
+            title: previousProject.title,
+            slug: previousProject.slug
+          }
+        : null
+    }
+  }
+}
+
+export async function getStaticPaths() {
+  const paths = projects.map(project => ({ params: { slug: project.slug } }))
+
+  return {
+    paths: paths,
+    fallback: false
+  }
+}
 
 Project.propTypes = {
-  slug: PropTypes.string.isRequired
+  project: PropTypes.object,
+  nextProject: PropTypes.object,
+  previousProject: PropTypes.object
 }
 
 export default Project

@@ -19,7 +19,7 @@ const StyledHeader = styled(Container)`
 const ProjectTitle = styled.h1`
   font-size: 7.6rem;
   font-weight: 400;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.8rem;
   text-align: center;
   will-change: transform;
 `
@@ -67,9 +67,7 @@ class Header extends React.PureComponent {
 
         <ProjectTitle>{project.title}</ProjectTitle>
 
-        <ProjectDetails>
-          {project.date} - {project.role}
-        </ProjectDetails>
+        <ProjectDetails>{project.role}</ProjectDetails>
 
         <Grid>
           <Cell startAt="3" endAt="11">

@@ -1,5 +1,5 @@
 node_modules
 .next
-context/projects/data.js
+data/projects.js
 public/static/img
-public/service-worker.*
+out

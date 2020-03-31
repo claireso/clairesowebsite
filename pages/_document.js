@@ -1,10 +1,6 @@
 import { Fragment } from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import getConfig from 'next/config'
-
-const { serverRuntimeConfig } = getConfig()
-const GA_CODE = serverRuntimeConfig.ga_id
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -34,6 +30,8 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const GA_CODE = process.env.ga_id
+
     return (
       <html lang="fr">
         <Head>
