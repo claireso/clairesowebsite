@@ -1,12 +1,8 @@
-import { useProjects } from '@context/projects'
-
 import Section from '@components/Section'
 
 import Project from './Project'
 
-const Projects = () => {
-  const projects = useProjects()
-
+const Projects = ({ projects }) => {
   return (
     <Section name="projects" title="Projets">
       <ul>
