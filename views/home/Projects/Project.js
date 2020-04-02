@@ -78,8 +78,7 @@ Project.propTypes = {
   project: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired
+    role: PropTypes.string.isRequired
   })
 }
 

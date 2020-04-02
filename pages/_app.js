@@ -1,6 +1,6 @@
-import React from 'react'
+import { Fragment, useEffect } from 'react'
 import { createGlobalStyle } from 'styled-components'
-import App from 'next/app'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 import Header from '@components/Header'
@@ -84,71 +84,78 @@ const Styles = createGlobalStyle`
   }
 `
 
-export default class MyApp extends App {
-  componentDidMount() {
+const MyApp = ({ Component, pageProps }) => {
+  useEffect(() => {
     const isTouch =
       !!('ontouchstart' in window) || window.navigator.msMaxTouchPoints > 0
 
     if (!isTouch) {
       document.querySelector('body').classList.add('no-touch')
     }
-  }
 
-  render() {
-    const { Component, pageProps } = this.props
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
+  }, [])
 
-    return (
-      <React.Fragment>
-        <Styles />
-        <Head>
-          <title>
-            Claire Sosset - Développeur front-end freelance basée à Paris
-          </title>
-          <meta
-            name="description"
-            content="Développeur front-end freelance basée à Paris (HTML, CSS, Javascript, React, SPA, Node)"
-          />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="robots" content="noimageindex" />
+  return (
+    <Fragment>
+      <Styles />
+      <Head>
+        <title>
+          Claire Sosset - Développeur front-end freelance basée à Paris
+        </title>
+        <meta
+          name="description"
+          content="Développeur front-end freelance basée à Paris (HTML, CSS, Javascript, React, SPA, Node)"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noimageindex" />
 
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/static/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/static/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/static/favicon-16x16.png"
-          />
-          <link rel="manifest" href="/static/site.webmanifest" />
-          <link
-            rel="mask-icon"
-            href="/static/safari-pinned-tab.svg"
-            color="#5bbad5"
-          />
-          <meta name="msapplication-TileColor" content="#da532c" />
-          <meta name="theme-color" content="#f5f5f5" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/static/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/static/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/static/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/static/site.webmanifest" />
+        <link
+          rel="mask-icon"
+          href="/static/safari-pinned-tab.svg"
+          color="#5bbad5"
+        />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#f5f5f5" />
 
-          <link
-            href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700"
-            rel="stylesheet"
-          />
-        </Head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
 
-        <Header />
+      <Header />
 
-        <PageTransition>
-          <Component {...pageProps} />
-        </PageTransition>
-      </React.Fragment>
-    )
-  }
+      <PageTransition>
+        <Component {...pageProps} />
+      </PageTransition>
+    </Fragment>
+  )
 }
+
+MyApp.propTypes = {
+  Component: PropTypes.element,
+  pageProps: PropTypes.object
+}
+
+export default MyApp
