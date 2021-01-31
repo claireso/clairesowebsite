@@ -62,10 +62,7 @@ export const getStaticProps = async context => {
         ? { title: nextProject.title, slug: nextProject.slug }
         : null,
       previousProject: previousProject
-        ? {
-            title: previousProject.title,
-            slug: previousProject.slug
-          }
+        ? { title: previousProject.title, slug: previousProject.slug }
         : null
     }
   }

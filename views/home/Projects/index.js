@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Section from '@components/Section'
 
 import Project from './Project'
@@ -12,6 +13,10 @@ const Projects = ({ projects }) => {
       </ul>
     </Section>
   )
+}
+
+Projects.propTypes = {
+  projects: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Projects
