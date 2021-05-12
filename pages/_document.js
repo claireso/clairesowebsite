@@ -54,19 +54,6 @@ export default class MyDocument extends Document {
               />
             </Fragment>
           )}
-
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                if ('IntersectionObserver' in window === false) {
-                  var scriptElement = document.createElement('script')
-                  scriptElement.defer = true
-                  scriptElement.src = '/_next/static/runtime/polyfills.js'
-                  document.head.appendChild(scriptElement)
-                }
-              `
-            }}
-          />
         </Head>
         <body>
           <Main />
