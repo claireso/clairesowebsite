@@ -37,7 +37,7 @@ const Intro = () => {
     <Container>
       <Wrapper>
         <Content startAt="3" endAt="12" as="p" coucou="ppppp">
-          Développeuse front-end indépendante basée à Paris. <br />
+          Développeuse front-end indépendante entre Bordeaux et Paris. <br />
           Découvrez quelques uns des projets auxquels j'ai eu le plaisir de
           participer.
         </Content>

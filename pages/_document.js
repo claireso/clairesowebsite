@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
     const GA_CODE = process.env.ga_id
 
     return (
-      <html lang="fr">
+      <Html lang="fr">
         <Head>
           {GA_CODE && (
             <Fragment>
@@ -54,26 +54,13 @@ export default class MyDocument extends Document {
               />
             </Fragment>
           )}
-
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                if ('IntersectionObserver' in window === false) {
-                  var scriptElement = document.createElement('script')
-                  scriptElement.defer = true
-                  scriptElement.src = '/_next/static/runtime/polyfills.js'
-                  document.head.appendChild(scriptElement)
-                }
-              `
-            }}
-          />
         </Head>
         <body>
           <Main />
 
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }
