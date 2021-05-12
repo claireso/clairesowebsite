@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
     const GA_CODE = process.env.ga_id
 
     return (
-      <html lang="fr">
+      <Html lang="fr">
         <Head>
           {GA_CODE && (
             <Fragment>
@@ -73,7 +73,7 @@ export default class MyDocument extends Document {
 
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }
