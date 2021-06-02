@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useReducer } from 'react'
+import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { useTransition, animated } from 'react-spring'
@@ -57,12 +58,14 @@ const scrollTo = hash => {
 }
 
 const PageTransition = ({ children }) => {
+  const { pathname, asPath } = useRouter()
   const [state, dispatch] = useReducer(reducer, {
     curtains: [],
     content: children
   })
 
   const previousContent = usePrevious(children)
+  const previousPathname = usePrevious(pathname)
 
   const transitions = useTransition(state.curtains, t => t.id, {
     native: true,
@@ -89,8 +92,14 @@ const PageTransition = ({ children }) => {
   useEffect(() => {
     if (!previousContent) return
 
+    if (
+      previousPathname &&
+      previousPathname === pathname &&
+      pathname === '/'
+    ) return
+
     dispatch({ type: 'showTransition', transitions: CURTAINS })
-  }, [children])
+  }, [pathname, asPath])
 
   return (
     <Fragment>
